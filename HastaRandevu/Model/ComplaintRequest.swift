@@ -1,8 +1,10 @@
-//
-//  ComplaintRequest.swift
-//  HastaRandevu
-//
-//  Created by emircan güleç on 30.04.2025.
-//
+
 
 import Foundation
+
+struct ComplaintRequest: Encodable {
+    let subject: String
+    let content: String
+    let user: PatientReference
+}
+

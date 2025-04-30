@@ -1,8 +1,10 @@
-//
-//  PatientHistory.swift
-//  HastaRandevu
-//
-//  Created by emircan güleç on 30.04.2025.
-//
-
 import Foundation
+
+struct PatientHistory: Identifiable, Decodable {
+    let id: Int
+    let date: String
+    let diagnosis: String
+    let treatment: String
+    let notes: String?
+    let patient: PatientReference
+}

@@ -1,8 +1,9 @@
-//
-//  Complaint.swift
-//  HastaRandevu
-//
-//  Created by emircan güleç on 30.04.2025.
-//
-
 import Foundation
+
+struct Complaint: Codable, Identifiable {
+    let id: Int
+    let title: String
+    let description: String
+    let date: String
+    let patient: PatientReference
+}

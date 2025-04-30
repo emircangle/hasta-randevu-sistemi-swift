@@ -1,8 +1,10 @@
-//
-//  AppointmentRequest.swift
-//  HastaRandevu
-//
-//  Created by emircan güleç on 28.04.2025.
-//
-
 import Foundation
+
+struct AppointmentRequest: Codable {
+    var clinic: String
+    var date: String
+    var time: String
+    var description: String?
+    var doctor: DoctorReference    // ✅ DOĞRU
+    var patient: PatientReference  // ✅ DOĞRU
+}

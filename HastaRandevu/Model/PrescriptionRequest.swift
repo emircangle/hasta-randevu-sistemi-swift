@@ -1,8 +1,10 @@
-//
-//  PrescriptionRequest.swift
-//  HastaRandevu
-//
-//  Created by emircan güleç on 30.04.2025.
-//
-
 import Foundation
+
+struct PrescriptionRequest: Encodable {
+    let prescriptionCode: String
+    let date: String
+    let medications: String
+    let description: String?
+    let doctor: DoctorReference
+    let patient: PatientReference
+}

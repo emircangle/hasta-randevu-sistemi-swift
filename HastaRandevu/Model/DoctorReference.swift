@@ -1,8 +1,8 @@
-//
-//  DoctorReference.swift
-//  HastaRandevu
-//
-//  Created by emircan güleç on 29.04.2025.
-//
-
 import Foundation
+
+
+struct DoctorReference: Codable {
+    let id: Int
+    let name: String?
+    let surname: String?
+}

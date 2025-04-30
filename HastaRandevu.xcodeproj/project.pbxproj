@@ -3,19 +3,92 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 63;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A3EC2172DBCFA6D007A4D24 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3EC2162DBCFA6D007A4D24 /* UserModel.swift */; };
+		1A3EC2192DBD0E9A007A4D24 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3EC2182DBD0E9A007A4D24 /* UserService.swift */; };
+		1A4523CB2DC257B6008FA4F8 /* MyAppointmentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4523CA2DC257B6008FA4F8 /* MyAppointmentsView.swift */; };
+		1A4523CD2DC2646C008FA4F8 /* MyPrescriptionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4523CC2DC2646C008FA4F8 /* MyPrescriptionsView.swift */; };
+		1A4523CF2DC26490008FA4F8 /* PrescriptionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4523CE2DC26490008FA4F8 /* PrescriptionService.swift */; };
+		1A4523D12DC264FB008FA4F8 /* Prescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4523D02DC264FB008FA4F8 /* Prescription.swift */; };
+		1A4523D32DC26625008FA4F8 /* PrescriptionRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4523D22DC26625008FA4F8 /* PrescriptionRequest.swift */; };
+		1A4523D52DC2A765008FA4F8 /* TestResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4523D42DC2A765008FA4F8 /* TestResult.swift */; };
+		1A4523D72DC2A77F008FA4F8 /* TestResultService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4523D62DC2A77F008FA4F8 /* TestResultService.swift */; };
+		1A4523D92DC2A79C008FA4F8 /* MyTestResultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4523D82DC2A79C008FA4F8 /* MyTestResultsView.swift */; };
+		1A4523DB2DC2A8E2008FA4F8 /* PatientReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4523DA2DC2A8E2008FA4F8 /* PatientReport.swift */; };
+		1A4523DD2DC2A8FB008FA4F8 /* PatientReportService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4523DC2DC2A8FB008FA4F8 /* PatientReportService.swift */; };
+		1A4523DF2DC2A90E008FA4F8 /* MyReportsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4523DE2DC2A90E008FA4F8 /* MyReportsView.swift */; };
+		1A4523E12DC2AC06008FA4F8 /* PatientHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4523E02DC2AC06008FA4F8 /* PatientHistory.swift */; };
+		1A4523E32DC2AC1C008FA4F8 /* PatientHistoryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4523E22DC2AC1C008FA4F8 /* PatientHistoryService.swift */; };
+		1A4523E52DC2AC4F008FA4F8 /* MyHealthHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4523E42DC2AC4F008FA4F8 /* MyHealthHistoryView.swift */; };
+		1A4523E72DC2AD83008FA4F8 /* Complaint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4523E62DC2AD83008FA4F8 /* Complaint.swift */; };
+		1A4523E92DC2ADB4008FA4F8 /* ComplaintRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4523E82DC2ADB4008FA4F8 /* ComplaintRequest.swift */; };
+		1A4523EB2DC2ADDD008FA4F8 /* ComplaintService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4523EA2DC2ADDD008FA4F8 /* ComplaintService.swift */; };
+		1A4523ED2DC2ADEE008FA4F8 /* CreateComplaintView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4523EC2DC2ADEE008FA4F8 /* CreateComplaintView.swift */; };
 		1A5F41A62DB982B500C40B9E /* HastaRandevuApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5F41A52DB982B500C40B9E /* HastaRandevuApp.swift */; };
 		1A5F41A82DB982B500C40B9E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5F41A72DB982B500C40B9E /* ContentView.swift */; };
 		1A5F41AA2DB982B700C40B9E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A5F41A92DB982B700C40B9E /* Assets.xcassets */; };
 		1A5F41AD2DB982B700C40B9E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A5F41AC2DB982B700C40B9E /* Preview Assets.xcassets */; };
 		1A5F41AF2DB982B700C40B9E /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5F41AE2DB982B700C40B9E /* Persistence.swift */; };
 		1A5F41B22DB982B700C40B9E /* HastaRandevu.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1A5F41B02DB982B700C40B9E /* HastaRandevu.xcdatamodeld */; };
+		1A6BBE5B2DB9957C004D6DE9 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 1A6BBE5A2DB9957C004D6DE9 /* Alamofire */; };
+		1A7A74692DBC3C2800338382 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A7A74682DBC3C2800338382 /* WelcomeView.swift */; };
+		1A7A746B2DBC3CA900338382 /* RegisterRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A7A746A2DBC3CA900338382 /* RegisterRequest.swift */; };
+		1A7A746D2DBC3CB600338382 /* RegisterResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A7A746C2DBC3CB600338382 /* RegisterResponse.swift */; };
+		1A7A746F2DBC3D1400338382 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A7A746E2DBC3D1400338382 /* RegisterView.swift */; };
+		1A7A74712DBC3D7A00338382 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A7A74702DBC3D7A00338382 /* RegisterViewModel.swift */; };
+		1A83F4CC2DC0140500404187 /* AppointmentCreateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A83F4CB2DC0140500404187 /* AppointmentCreateView.swift */; };
+		1A83F4CE2DC018ED00404187 /* AppointmentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A83F4CD2DC018ED00404187 /* AppointmentService.swift */; };
+		1A83F4D02DC020BF00404187 /* AppointmentRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A83F4CF2DC020BF00404187 /* AppointmentRequest.swift */; };
+		1A83F4D22DC0215E00404187 /* Appointment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A83F4D12DC0215E00404187 /* Appointment.swift */; };
+		1A83F4D42DC0245500404187 /* TokenUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A83F4D32DC0245500404187 /* TokenUtil.swift */; };
+		1A83F4D62DC024E000404187 /* DoctorReference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A83F4D52DC024E000404187 /* DoctorReference.swift */; };
+		1A83F4D82DC024EC00404187 /* PatientReference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A83F4D72DC024EC00404187 /* PatientReference.swift */; };
+		1AFF6BDF2DB984CF0093A3E2 /* JWTDecode in Frameworks */ = {isa = PBXBuildFile; productRef = 1AFF6BDE2DB984CF0093A3E2 /* JWTDecode */; };
+		1AFF6BE32DB9863A0093A3E2 /* LoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AFF6BE22DB9863A0093A3E2 /* LoginRequest.swift */; };
+		1AFF6BE52DB986580093A3E2 /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AFF6BE42DB986580093A3E2 /* LoginResponse.swift */; };
+		1AFF6BE72DB986650093A3E2 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AFF6BE62DB986650093A3E2 /* AuthService.swift */; };
+		1AFF6BE92DB986770093A3E2 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AFF6BE82DB986770093A3E2 /* LoginViewModel.swift */; };
+		1AFF6BEB2DB9868A0093A3E2 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AFF6BEA2DB9868A0093A3E2 /* LoginView.swift */; };
+		1AFF6BED2DB988F80093A3E2 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AFF6BEC2DB988F80093A3E2 /* MainView.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		1AFF6BEF2DB994420093A3E2 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		1A3EC2162DBCFA6D007A4D24 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		1A3EC2182DBD0E9A007A4D24 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
+		1A4523CA2DC257B6008FA4F8 /* MyAppointmentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAppointmentsView.swift; sourceTree = "<group>"; };
+		1A4523CC2DC2646C008FA4F8 /* MyPrescriptionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPrescriptionsView.swift; sourceTree = "<group>"; };
+		1A4523CE2DC26490008FA4F8 /* PrescriptionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrescriptionService.swift; sourceTree = "<group>"; };
+		1A4523D02DC264FB008FA4F8 /* Prescription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Prescription.swift; sourceTree = "<group>"; };
+		1A4523D22DC26625008FA4F8 /* PrescriptionRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrescriptionRequest.swift; sourceTree = "<group>"; };
+		1A4523D42DC2A765008FA4F8 /* TestResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestResult.swift; sourceTree = "<group>"; };
+		1A4523D62DC2A77F008FA4F8 /* TestResultService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestResultService.swift; sourceTree = "<group>"; };
+		1A4523D82DC2A79C008FA4F8 /* MyTestResultsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTestResultsView.swift; sourceTree = "<group>"; };
+		1A4523DA2DC2A8E2008FA4F8 /* PatientReport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientReport.swift; sourceTree = "<group>"; };
+		1A4523DC2DC2A8FB008FA4F8 /* PatientReportService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientReportService.swift; sourceTree = "<group>"; };
+		1A4523DE2DC2A90E008FA4F8 /* MyReportsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyReportsView.swift; sourceTree = "<group>"; };
+		1A4523E02DC2AC06008FA4F8 /* PatientHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientHistory.swift; sourceTree = "<group>"; };
+		1A4523E22DC2AC1C008FA4F8 /* PatientHistoryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientHistoryService.swift; sourceTree = "<group>"; };
+		1A4523E42DC2AC4F008FA4F8 /* MyHealthHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyHealthHistoryView.swift; sourceTree = "<group>"; };
+		1A4523E62DC2AD83008FA4F8 /* Complaint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Complaint.swift; sourceTree = "<group>"; };
+		1A4523E82DC2ADB4008FA4F8 /* ComplaintRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplaintRequest.swift; sourceTree = "<group>"; };
+		1A4523EA2DC2ADDD008FA4F8 /* ComplaintService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplaintService.swift; sourceTree = "<group>"; };
+		1A4523EC2DC2ADEE008FA4F8 /* CreateComplaintView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateComplaintView.swift; sourceTree = "<group>"; };
 		1A5F41A22DB982B500C40B9E /* HastaRandevu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HastaRandevu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A5F41A52DB982B500C40B9E /* HastaRandevuApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HastaRandevuApp.swift; sourceTree = "<group>"; };
 		1A5F41A72DB982B500C40B9E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -23,6 +96,24 @@
 		1A5F41AC2DB982B700C40B9E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		1A5F41AE2DB982B700C40B9E /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		1A5F41B12DB982B700C40B9E /* HastaRandevu.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HastaRandevu.xcdatamodel; sourceTree = "<group>"; };
+		1A7A74682DBC3C2800338382 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
+		1A7A746A2DBC3CA900338382 /* RegisterRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterRequest.swift; sourceTree = "<group>"; };
+		1A7A746C2DBC3CB600338382 /* RegisterResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterResponse.swift; sourceTree = "<group>"; };
+		1A7A746E2DBC3D1400338382 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
+		1A7A74702DBC3D7A00338382 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
+		1A83F4CB2DC0140500404187 /* AppointmentCreateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentCreateView.swift; sourceTree = "<group>"; };
+		1A83F4CD2DC018ED00404187 /* AppointmentService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentService.swift; sourceTree = "<group>"; };
+		1A83F4CF2DC020BF00404187 /* AppointmentRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentRequest.swift; sourceTree = "<group>"; };
+		1A83F4D12DC0215E00404187 /* Appointment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Appointment.swift; sourceTree = "<group>"; };
+		1A83F4D32DC0245500404187 /* TokenUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenUtil.swift; sourceTree = "<group>"; };
+		1A83F4D52DC024E000404187 /* DoctorReference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorReference.swift; sourceTree = "<group>"; };
+		1A83F4D72DC024EC00404187 /* PatientReference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientReference.swift; sourceTree = "<group>"; };
+		1AFF6BE22DB9863A0093A3E2 /* LoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequest.swift; sourceTree = "<group>"; };
+		1AFF6BE42DB986580093A3E2 /* LoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
+		1AFF6BE62DB986650093A3E2 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		1AFF6BE82DB986770093A3E2 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		1AFF6BEA2DB9868A0093A3E2 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		1AFF6BEC2DB988F80093A3E2 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -30,6 +121,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1AFF6BDF2DB984CF0093A3E2 /* JWTDecode in Frameworks */,
+				1A6BBE5B2DB9957C004D6DE9 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -41,6 +134,7 @@
 			children = (
 				1A5F41A42DB982B500C40B9E /* HastaRandevu */,
 				1A5F41A32DB982B500C40B9E /* Products */,
+				1A6BBE5E2DB995BF004D6DE9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -55,6 +149,11 @@
 		1A5F41A42DB982B500C40B9E /* HastaRandevu */ = {
 			isa = PBXGroup;
 			children = (
+				1AFF6BD62DB9834D0093A3E2 /* Utils */,
+				1AFF6BD52DB983450093A3E2 /* ViewModel */,
+				1A5F41BA2DB9831900C40B9E /* View */,
+				1A5F41B92DB9830900C40B9E /* Service */,
+				1A5F41B82DB982F500C40B9E /* Model */,
 				1A5F41A52DB982B500C40B9E /* HastaRandevuApp.swift */,
 				1A5F41A72DB982B500C40B9E /* ContentView.swift */,
 				1A5F41A92DB982B700C40B9E /* Assets.xcassets */,
@@ -73,6 +172,86 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		1A5F41B82DB982F500C40B9E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1AFF6BE22DB9863A0093A3E2 /* LoginRequest.swift */,
+				1AFF6BE42DB986580093A3E2 /* LoginResponse.swift */,
+				1A7A746A2DBC3CA900338382 /* RegisterRequest.swift */,
+				1A7A746C2DBC3CB600338382 /* RegisterResponse.swift */,
+				1A83F4CF2DC020BF00404187 /* AppointmentRequest.swift */,
+				1A83F4D12DC0215E00404187 /* Appointment.swift */,
+				1A83F4D52DC024E000404187 /* DoctorReference.swift */,
+				1A83F4D72DC024EC00404187 /* PatientReference.swift */,
+				1A4523D02DC264FB008FA4F8 /* Prescription.swift */,
+				1A4523D22DC26625008FA4F8 /* PrescriptionRequest.swift */,
+				1A4523D42DC2A765008FA4F8 /* TestResult.swift */,
+				1A4523DA2DC2A8E2008FA4F8 /* PatientReport.swift */,
+				1A4523E02DC2AC06008FA4F8 /* PatientHistory.swift */,
+				1A4523E62DC2AD83008FA4F8 /* Complaint.swift */,
+				1A4523E82DC2ADB4008FA4F8 /* ComplaintRequest.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		1A5F41B92DB9830900C40B9E /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				1AFF6BE62DB986650093A3E2 /* AuthService.swift */,
+				1A3EC2182DBD0E9A007A4D24 /* UserService.swift */,
+				1A83F4CD2DC018ED00404187 /* AppointmentService.swift */,
+				1A4523CE2DC26490008FA4F8 /* PrescriptionService.swift */,
+				1A4523D62DC2A77F008FA4F8 /* TestResultService.swift */,
+				1A4523DC2DC2A8FB008FA4F8 /* PatientReportService.swift */,
+				1A4523E22DC2AC1C008FA4F8 /* PatientHistoryService.swift */,
+				1A4523EA2DC2ADDD008FA4F8 /* ComplaintService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		1A5F41BA2DB9831900C40B9E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1AFF6BEA2DB9868A0093A3E2 /* LoginView.swift */,
+				1AFF6BEC2DB988F80093A3E2 /* MainView.swift */,
+				1A7A74682DBC3C2800338382 /* WelcomeView.swift */,
+				1A7A746E2DBC3D1400338382 /* RegisterView.swift */,
+				1A83F4CB2DC0140500404187 /* AppointmentCreateView.swift */,
+				1A4523CA2DC257B6008FA4F8 /* MyAppointmentsView.swift */,
+				1A4523CC2DC2646C008FA4F8 /* MyPrescriptionsView.swift */,
+				1A4523D82DC2A79C008FA4F8 /* MyTestResultsView.swift */,
+				1A4523DE2DC2A90E008FA4F8 /* MyReportsView.swift */,
+				1A4523E42DC2AC4F008FA4F8 /* MyHealthHistoryView.swift */,
+				1A4523EC2DC2ADEE008FA4F8 /* CreateComplaintView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1A6BBE5E2DB995BF004D6DE9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1AFF6BD52DB983450093A3E2 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				1AFF6BE82DB986770093A3E2 /* LoginViewModel.swift */,
+				1A7A74702DBC3D7A00338382 /* RegisterViewModel.swift */,
+				1A3EC2162DBCFA6D007A4D24 /* UserModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		1AFF6BD62DB9834D0093A3E2 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				1A83F4D32DC0245500404187 /* TokenUtil.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -83,12 +262,17 @@
 				1A5F419E2DB982B500C40B9E /* Sources */,
 				1A5F419F2DB982B500C40B9E /* Frameworks */,
 				1A5F41A02DB982B500C40B9E /* Resources */,
+				1AFF6BEF2DB994420093A3E2 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = HastaRandevu;
+			packageProductDependencies = (
+				1AFF6BDE2DB984CF0093A3E2 /* JWTDecode */,
+				1A6BBE5A2DB9957C004D6DE9 /* Alamofire */,
+			);
 			productName = HastaRandevu;
 			productReference = 1A5F41A22DB982B500C40B9E /* HastaRandevu.app */;
 			productType = "com.apple.product-type.application";
@@ -109,7 +293,7 @@
 				};
 			};
 			buildConfigurationList = 1A5F419D2DB982B500C40B9E /* Build configuration list for PBXProject "HastaRandevu" */;
-			compatibilityVersion = "Xcode 14.0";
+			compatibilityVersion = "Xcode 15.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -117,6 +301,10 @@
 				Base,
 			);
 			mainGroup = 1A5F41992DB982B500C40B9E;
+			packageReferences = (
+				1AFF6BD82DB984B20093A3E2 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				1AFF6BDD2DB984CF0093A3E2 /* XCRemoteSwiftPackageReference "JWTDecode" */,
+			);
 			productRefGroup = 1A5F41A32DB982B500C40B9E /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -143,10 +331,48 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A4523D52DC2A765008FA4F8 /* TestResult.swift in Sources */,
+				1A4523E72DC2AD83008FA4F8 /* Complaint.swift in Sources */,
 				1A5F41AF2DB982B700C40B9E /* Persistence.swift in Sources */,
+				1A4523EB2DC2ADDD008FA4F8 /* ComplaintService.swift in Sources */,
+				1A4523D32DC26625008FA4F8 /* PrescriptionRequest.swift in Sources */,
+				1A4523CB2DC257B6008FA4F8 /* MyAppointmentsView.swift in Sources */,
+				1A4523DB2DC2A8E2008FA4F8 /* PatientReport.swift in Sources */,
+				1A4523D72DC2A77F008FA4F8 /* TestResultService.swift in Sources */,
+				1A4523D92DC2A79C008FA4F8 /* MyTestResultsView.swift in Sources */,
+				1A7A74712DBC3D7A00338382 /* RegisterViewModel.swift in Sources */,
+				1A4523D12DC264FB008FA4F8 /* Prescription.swift in Sources */,
+				1A4523E52DC2AC4F008FA4F8 /* MyHealthHistoryView.swift in Sources */,
 				1A5F41A82DB982B500C40B9E /* ContentView.swift in Sources */,
+				1A7A746B2DBC3CA900338382 /* RegisterRequest.swift in Sources */,
+				1A7A746F2DBC3D1400338382 /* RegisterView.swift in Sources */,
+				1AFF6BE52DB986580093A3E2 /* LoginResponse.swift in Sources */,
+				1A3EC2192DBD0E9A007A4D24 /* UserService.swift in Sources */,
+				1A4523CD2DC2646C008FA4F8 /* MyPrescriptionsView.swift in Sources */,
+				1A4523E92DC2ADB4008FA4F8 /* ComplaintRequest.swift in Sources */,
+				1AFF6BED2DB988F80093A3E2 /* MainView.swift in Sources */,
+				1A83F4CE2DC018ED00404187 /* AppointmentService.swift in Sources */,
+				1A83F4D42DC0245500404187 /* TokenUtil.swift in Sources */,
+				1A83F4D62DC024E000404187 /* DoctorReference.swift in Sources */,
+				1AFF6BEB2DB9868A0093A3E2 /* LoginView.swift in Sources */,
 				1A5F41A62DB982B500C40B9E /* HastaRandevuApp.swift in Sources */,
+				1A83F4D02DC020BF00404187 /* AppointmentRequest.swift in Sources */,
+				1A83F4D22DC0215E00404187 /* Appointment.swift in Sources */,
+				1A4523DF2DC2A90E008FA4F8 /* MyReportsView.swift in Sources */,
+				1A4523CF2DC26490008FA4F8 /* PrescriptionService.swift in Sources */,
+				1A7A74692DBC3C2800338382 /* WelcomeView.swift in Sources */,
+				1A3EC2172DBCFA6D007A4D24 /* UserModel.swift in Sources */,
+				1AFF6BE92DB986770093A3E2 /* LoginViewModel.swift in Sources */,
+				1A7A746D2DBC3CB600338382 /* RegisterResponse.swift in Sources */,
+				1A83F4CC2DC0140500404187 /* AppointmentCreateView.swift in Sources */,
+				1A4523DD2DC2A8FB008FA4F8 /* PatientReportService.swift in Sources */,
+				1AFF6BE32DB9863A0093A3E2 /* LoginRequest.swift in Sources */,
+				1A83F4D82DC024EC00404187 /* PatientReference.swift in Sources */,
 				1A5F41B22DB982B700C40B9E /* HastaRandevu.xcdatamodeld in Sources */,
+				1A4523ED2DC2ADEE008FA4F8 /* CreateComplaintView.swift in Sources */,
+				1A4523E32DC2AC1C008FA4F8 /* PatientHistoryService.swift in Sources */,
+				1A4523E12DC2AC06008FA4F8 /* PatientHistory.swift in Sources */,
+				1AFF6BE72DB986650093A3E2 /* AuthService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -352,6 +578,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		1AFF6BD82DB984B20093A3E2 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.10.2;
+			};
+		};
+		1AFF6BDD2DB984CF0093A3E2 /* XCRemoteSwiftPackageReference "JWTDecode" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/auth0/JWTDecode.swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.3.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		1A6BBE5A2DB9957C004D6DE9 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1AFF6BD82DB984B20093A3E2 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		1AFF6BDE2DB984CF0093A3E2 /* JWTDecode */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1AFF6BDD2DB984CF0093A3E2 /* XCRemoteSwiftPackageReference "JWTDecode" */;
+			productName = JWTDecode;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		1A5F41B02DB982B700C40B9E /* HastaRandevu.xcdatamodeld */ = {
