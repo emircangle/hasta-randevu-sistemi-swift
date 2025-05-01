@@ -1,10 +1,3 @@
-//
-//  UserService.swift
-//  HastaRandevu
-//
-//  Created by emircan güleç on 26.04.2025.
-//
-
 import Foundation
 import Alamofire
 
@@ -12,7 +5,7 @@ class UserService {
     static let shared = UserService()
     private init() {}
 
-    private let baseURL = "http://192.168.1.103:8080/hastarandevu/users"
+    private let baseURL = "\(AppConfig.baseUrl)/hastarandevu/users"
 
     private var headers: HTTPHeaders? {
         if let token = UserDefaults.standard.string(forKey: "jwtToken") {
@@ -22,7 +15,7 @@ class UserService {
     }
 
     // MARK: - Genel Fonksiyonlar
-    
+
     private func fetch<T: Decodable>(endpoint: String, completion: @escaping (Result<T, Error>) -> Void) {
         let url = "\(baseURL)\(endpoint)"
 
@@ -37,7 +30,7 @@ class UserService {
                 }
             }
     }
-    
+
     // MARK: - Kullanıcı Çekme Fonksiyonları
 
     func fetchUserByEmail(email: String, completion: @escaping (Result<User, Error>) -> Void) {
@@ -59,11 +52,11 @@ class UserService {
     func fetchUsersBySpecialization(specialization: String, completion: @escaping (Result<[User], Error>) -> Void) {
         fetch(endpoint: "/specialization/\(specialization)", completion: completion)
     }
-    
+
     func fetchUsersByBloodType(bloodType: String, completion: @escaping (Result<[User], Error>) -> Void) {
         fetch(endpoint: "/blood-type/\(bloodType)", completion: completion)
     }
-    
+
     func fetchDoctors(completion: @escaping (Result<[User], Error>) -> Void) {
         fetch(endpoint: "/role/DOKTOR", completion: completion)
     }

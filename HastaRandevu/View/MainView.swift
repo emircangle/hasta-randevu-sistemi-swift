@@ -2,15 +2,14 @@ import SwiftUI
 
 struct MainView: View {
     @State private var user: User?
-    @State private var showMenu = false
     @State private var navigateToRandevuOlustur = false
     @State private var navigateToMyAppointments = false
     @State private var navigateToPrescriptions = false
     @State private var navigateToTestResults = false
-    @State private var navigateToReports = false // ✅ EKLENDİ
+    @State private var navigateToReports = false
     @State private var navigateToPatientHistory = false
     @State private var navigateToComplaint = false
-
+    @State private var navigateToMyComplaints = false // ✅ Şikayetlerim eklendi
 
     var body: some View {
         NavigationStack {
@@ -31,7 +30,7 @@ struct MainView: View {
 
                     Spacer()
 
-                    // Menü Butonu
+                    // Menü
                     Menu {
                         Button("📅 Randevu Oluştur") {
                             navigateToRandevuOlustur = true
@@ -46,13 +45,16 @@ struct MainView: View {
                             navigateToTestResults = true
                         }
                         Button("📄 Raporlarım") {
-                            navigateToReports = true // ✅ YÖNLENDİRME
+                            navigateToReports = true
                         }
                         Button("🧬 Sağlık Geçmişim") {
                             navigateToPatientHistory = true
                         }
                         Button("📢 Şikayet Oluştur") {
                             navigateToComplaint = true
+                        }
+                        Button("📨 Şikayetlerim") {
+                            navigateToMyComplaints = true
                         }
 
                         Divider()
@@ -67,19 +69,25 @@ struct MainView: View {
 
                 Spacer()
 
-                // NavigationLink'ler
+                // Navigation yönlendirmeleri
                 NavigationLink("", destination: AppointmentCreateView(), isActive: $navigateToRandevuOlustur).hidden()
                 NavigationLink("", destination: MyAppointmentsView(), isActive: $navigateToMyAppointments).hidden()
                 NavigationLink("", destination: MyPrescriptionsView(), isActive: $navigateToPrescriptions).hidden()
                 NavigationLink("", destination: MyTestResultsView(), isActive: $navigateToTestResults).hidden()
-                NavigationLink("", destination: MyReportsView(), isActive: $navigateToReports).hidden() // ✅ EKLENDİ
+                NavigationLink("", destination: MyReportsView(), isActive: $navigateToReports).hidden()
                 NavigationLink("", destination: MyHealthHistoryView(), isActive: $navigateToPatientHistory).hidden()
                 NavigationLink("", destination: CreateComplaintView(), isActive: $navigateToComplaint).hidden()
-
+                NavigationLink("", destination: MyComplaintsView(), isActive: $navigateToMyComplaints).hidden()
             }
             .navigationTitle("")
             .navigationBarHidden(true)
             .onAppear(perform: loadUser)
+            .overlay(alignment: .bottomTrailing) {
+                AIChatView()
+                    .padding(.trailing, 16)
+                    .padding(.bottom, 32)
+            }
+
         }
     }
 

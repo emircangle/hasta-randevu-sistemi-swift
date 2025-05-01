@@ -5,7 +5,7 @@ class AppointmentService {
     static let shared = AppointmentService()
     private init() {}
 
-    private let baseURL = "http://192.168.1.103:8080/hastarandevu/appointments"
+    private let baseURL = "\(AppConfig.baseUrl)/hastarandevu/appointments"
 
     private var headers: HTTPHeaders? {
         if let token = UserDefaults.standard.string(forKey: "jwtToken") {

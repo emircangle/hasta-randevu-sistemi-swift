@@ -5,7 +5,7 @@ class PatientHistoryService {
     static let shared = PatientHistoryService()
     private init() {}
 
-    private let baseURL = "http://localhost:8080/hastarandevu/patient-history"
+    private let baseURL = "\(AppConfig.baseUrl)/hastarandevu/patient-history"
 
     private var headers: HTTPHeaders? {
         if let token = UserDefaults.standard.string(forKey: "jwtToken") {

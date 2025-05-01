@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A2B39E22DC39A7F0018EBAA /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B39E12DC39A7F0018EBAA /* AppConfig.swift */; };
+		1A2B39E42DC3A3840018EBAA /* MyComplaintsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B39E32DC3A3840018EBAA /* MyComplaintsView.swift */; };
+		1A2B39E62DC3AAD90018EBAA /* AIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B39E52DC3AAD90018EBAA /* AIService.swift */; };
+		1A2B39E82DC3AB2F0018EBAA /* AIChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B39E72DC3AB2F0018EBAA /* AIChatView.swift */; };
 		1A3EC2172DBCFA6D007A4D24 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3EC2162DBCFA6D007A4D24 /* UserModel.swift */; };
 		1A3EC2192DBD0E9A007A4D24 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3EC2182DBD0E9A007A4D24 /* UserService.swift */; };
 		1A4523CB2DC257B6008FA4F8 /* MyAppointmentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4523CA2DC257B6008FA4F8 /* MyAppointmentsView.swift */; };
@@ -69,6 +73,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1A2B39E12DC39A7F0018EBAA /* AppConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
+		1A2B39E32DC3A3840018EBAA /* MyComplaintsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyComplaintsView.swift; sourceTree = "<group>"; };
+		1A2B39E52DC3AAD90018EBAA /* AIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIService.swift; sourceTree = "<group>"; };
+		1A2B39E72DC3AB2F0018EBAA /* AIChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIChatView.swift; sourceTree = "<group>"; };
 		1A3EC2162DBCFA6D007A4D24 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		1A3EC2182DBD0E9A007A4D24 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		1A4523CA2DC257B6008FA4F8 /* MyAppointmentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAppointmentsView.swift; sourceTree = "<group>"; };
@@ -205,6 +213,7 @@
 				1A4523DC2DC2A8FB008FA4F8 /* PatientReportService.swift */,
 				1A4523E22DC2AC1C008FA4F8 /* PatientHistoryService.swift */,
 				1A4523EA2DC2ADDD008FA4F8 /* ComplaintService.swift */,
+				1A2B39E52DC3AAD90018EBAA /* AIService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -223,6 +232,8 @@
 				1A4523DE2DC2A90E008FA4F8 /* MyReportsView.swift */,
 				1A4523E42DC2AC4F008FA4F8 /* MyHealthHistoryView.swift */,
 				1A4523EC2DC2ADEE008FA4F8 /* CreateComplaintView.swift */,
+				1A2B39E32DC3A3840018EBAA /* MyComplaintsView.swift */,
+				1A2B39E72DC3AB2F0018EBAA /* AIChatView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -248,6 +259,7 @@
 			isa = PBXGroup;
 			children = (
 				1A83F4D32DC0245500404187 /* TokenUtil.swift */,
+				1A2B39E12DC39A7F0018EBAA /* AppConfig.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -335,6 +347,7 @@
 				1A4523E72DC2AD83008FA4F8 /* Complaint.swift in Sources */,
 				1A5F41AF2DB982B700C40B9E /* Persistence.swift in Sources */,
 				1A4523EB2DC2ADDD008FA4F8 /* ComplaintService.swift in Sources */,
+				1A2B39E22DC39A7F0018EBAA /* AppConfig.swift in Sources */,
 				1A4523D32DC26625008FA4F8 /* PrescriptionRequest.swift in Sources */,
 				1A4523CB2DC257B6008FA4F8 /* MyAppointmentsView.swift in Sources */,
 				1A4523DB2DC2A8E2008FA4F8 /* PatientReport.swift in Sources */,
@@ -349,7 +362,9 @@
 				1AFF6BE52DB986580093A3E2 /* LoginResponse.swift in Sources */,
 				1A3EC2192DBD0E9A007A4D24 /* UserService.swift in Sources */,
 				1A4523CD2DC2646C008FA4F8 /* MyPrescriptionsView.swift in Sources */,
+				1A2B39E62DC3AAD90018EBAA /* AIService.swift in Sources */,
 				1A4523E92DC2ADB4008FA4F8 /* ComplaintRequest.swift in Sources */,
+				1A2B39E42DC3A3840018EBAA /* MyComplaintsView.swift in Sources */,
 				1AFF6BED2DB988F80093A3E2 /* MainView.swift in Sources */,
 				1A83F4CE2DC018ED00404187 /* AppointmentService.swift in Sources */,
 				1A83F4D42DC0245500404187 /* TokenUtil.swift in Sources */,
@@ -366,6 +381,7 @@
 				1A7A746D2DBC3CB600338382 /* RegisterResponse.swift in Sources */,
 				1A83F4CC2DC0140500404187 /* AppointmentCreateView.swift in Sources */,
 				1A4523DD2DC2A8FB008FA4F8 /* PatientReportService.swift in Sources */,
+				1A2B39E82DC3AB2F0018EBAA /* AIChatView.swift in Sources */,
 				1AFF6BE32DB9863A0093A3E2 /* LoginRequest.swift in Sources */,
 				1A83F4D82DC024EC00404187 /* PatientReference.swift in Sources */,
 				1A5F41B22DB982B700C40B9E /* HastaRandevu.xcdatamodeld in Sources */,

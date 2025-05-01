@@ -1,9 +1,11 @@
 import SwiftUI
 
 struct AppointmentCreateView: View {
+    var selectedClinic: String = ""
+
     @Environment(\.presentationMode) var presentationMode
 
-    @State private var selectedClinic: String = ""
+    @State private var selectedClinicState: String = ""
     @State private var selectedDoctorId: Int?
     @State private var selectedDate = Date()
     @State private var selectedTime: String = ""
@@ -28,12 +30,12 @@ struct AppointmentCreateView: View {
                 .font(.largeTitle)
                 .bold()
 
-            Picker("Klinik Seçiniz", selection: $selectedClinic) {
+            Picker("Klinik Seçiniz", selection: $selectedClinicState) {
                 Text("-- Seçiniz --").tag("")
                 ForEach(clinics, id: \.self) { Text($0).tag($0) }
             }
             .pickerStyle(MenuPickerStyle())
-            .onChange(of: selectedClinic) { _ in
+            .onChange(of: selectedClinicState) { _ in
                 selectedDoctorId = nil
                 selectedTime = ""
                 fetchDoctors()
@@ -111,7 +113,13 @@ struct AppointmentCreateView: View {
             Spacer()
         }
         .padding()
-        .onAppear(perform: fetchCurrentUser)
+        .onAppear {
+            fetchCurrentUser()
+            if clinics.contains(selectedClinic) {
+                selectedClinicState = selectedClinic
+                fetchDoctors()
+            }
+        }
         .navigationTitle("Randevu Oluştur")
         .alert(isPresented: $showReplaceAlert) {
             Alert(
@@ -151,8 +159,8 @@ struct AppointmentCreateView: View {
     }
 
     private func fetchDoctors() {
-        guard !selectedClinic.isEmpty else { return }
-        UserService.shared.fetchUsersBySpecialization(specialization: selectedClinic) { result in
+        guard !selectedClinicState.isEmpty else { return }
+        UserService.shared.fetchUsersBySpecialization(specialization: selectedClinicState) { result in
             DispatchQueue.main.async {
                 if case let .success(data) = result {
                     doctors = data
@@ -217,7 +225,7 @@ struct AppointmentCreateView: View {
         }
 
         if allAppointments.contains(where: {
-            $0.clinic == selectedClinic && $0.status == "AKTIF"
+            $0.clinic == selectedClinicState && $0.status == "AKTIF"
         }) {
             showReplaceAlert = true
         } else {
@@ -233,16 +241,12 @@ struct AppointmentCreateView: View {
         let selectedDoctor = doctors.first(where: { $0.id == doctorId })
 
         let request = AppointmentRequest(
-            clinic: selectedClinic,
+            clinic: selectedClinicState,
             date: formatDate(selectedDate),
             time: selectedTime,
             description: descriptionText.isEmpty ? "Online randevu alındı." : descriptionText,
-            doctor: DoctorReference(
-                id: doctorId,
-                name: selectedDoctor?.name,
-                surname: selectedDoctor?.surname
-            ),
-            patient: PatientReference(id: patientId) // 🔧 sadece id yeterli
+            doctor: DoctorReference(id: doctorId, name: selectedDoctor?.name, surname: selectedDoctor?.surname),
+            patient: PatientReference(id: patientId)
         )
 
         AppointmentService.shared.createAppointment(request) { result in
@@ -259,14 +263,12 @@ struct AppointmentCreateView: View {
         }
     }
 
-
-
     private func isSlotDisabled(_ time: String) -> Bool {
         pastTimes.contains(time) || doctorAppointments.contains { $0.time.prefix(5) == time && $0.status == "AKTIF" }
     }
 
     private func resetForm() {
-        selectedClinic = ""
+        selectedClinicState = ""
         selectedDoctorId = nil
         selectedTime = ""
         descriptionText = ""

@@ -1,18 +1,11 @@
-//
-//  AuthService.swift
-//  HastaRandevu
-//
-//  Created by emircan güleç on 23.04.2025.
-//
-
 import Foundation
 import Alamofire
 
 class AuthService {
     static let shared = AuthService()
     private init() {}
-    
-    private let baseURL = "http://192.168.1.103:8080/hastarandevu"
+
+    private let baseURL = "\(AppConfig.baseUrl)/hastarandevu"
 
     func login(email: String, password: String, completion: @escaping (Result<String, Error>) -> Void) {
         let url = "\(baseURL)/auth/login"
@@ -32,7 +25,7 @@ class AuthService {
             }
         }
     }
-   
+
     func registerUser(request: RegisterRequest, completion: @escaping (Result<String, Error>) -> Void) {
         let url = "\(baseURL)/auth/register"
 
@@ -51,4 +44,3 @@ class AuthService {
         }
     }
 }
-

@@ -48,6 +48,12 @@ struct MyTestResultsView: View {
             Spacer()
         }
         .onAppear(perform: fetchUser)
+        .overlay(alignment: .bottomTrailing) {
+            AIChatView()
+                .padding(.trailing, 16)
+                .padding(.bottom, 32)
+        }
+
     }
 
     private func labelForPeriod(_ period: String) -> String {

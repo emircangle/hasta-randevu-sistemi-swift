@@ -68,6 +68,12 @@ struct MyAppointmentsView: View {
             self.endDate = Calendar.current.date(byAdding: .day, value: 30, to: Date())!
             fetchCurrentUser()
         }
+        .overlay(alignment: .bottomTrailing) {
+            AIChatView()
+                .padding(.trailing, 16)
+                .padding(.bottom, 32)
+        }
+
         .onChange(of: filterOption) { _ in applyFilter() }
         .onChange(of: startDate) { _ in applyFilter() }
         .onChange(of: endDate) { _ in applyFilter() }

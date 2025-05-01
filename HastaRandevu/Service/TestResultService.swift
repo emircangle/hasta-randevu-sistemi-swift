@@ -5,7 +5,7 @@ class TestResultService {
     static let shared = TestResultService()
     private init() {}
 
-    private let baseURL = "http://localhost:8080/hastarandevu/test-result"
+    private let baseURL = "\(AppConfig.baseUrl)/hastarandevu/test-result"
 
     private var headers: HTTPHeaders? {
         if let token = UserDefaults.standard.string(forKey: "jwtToken") {

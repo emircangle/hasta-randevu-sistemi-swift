@@ -5,7 +5,7 @@ class PatientReportService {
     static let shared = PatientReportService()
     private init() {}
 
-    private let baseURL = "http://localhost:8080/hastarandevu/patient-report"
+    private let baseURL = "\(AppConfig.baseUrl)/hastarandevu/patient-report"
 
     private var headers: HTTPHeaders? {
         if let token = UserDefaults.standard.string(forKey: "jwtToken") {
@@ -31,5 +31,4 @@ class PatientReportService {
                 completion(response.result.mapError { $0 as Error })
             }
     }
-
 }
