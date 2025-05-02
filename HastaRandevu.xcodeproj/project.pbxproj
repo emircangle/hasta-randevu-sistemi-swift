@@ -57,6 +57,9 @@
 		1A9CCE5F2DC4FD990050C283 /* DoctorPrescriptionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9CCE5E2DC4FD990050C283 /* DoctorPrescriptionService.swift */; };
 		1A9CCE632DC4FDCB0050C283 /* DoctorPrescriptionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9CCE622DC4FDCB0050C283 /* DoctorPrescriptionsView.swift */; };
 		1A9CCE6B2DC541030050C283 /* DoctorPatientService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9CCE6A2DC541030050C283 /* DoctorPatientService.swift */; };
+		1A9CCE6D2DC547580050C283 /* DoctorTestResultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9CCE6C2DC547580050C283 /* DoctorTestResultsView.swift */; };
+		1A9CCE6F2DC5477C0050C283 /* DoctorTestResultService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9CCE6E2DC5477C0050C283 /* DoctorTestResultService.swift */; };
+		1A9CCE712DC547E10050C283 /* TestResultRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9CCE702DC547E10050C283 /* TestResultRequest.swift */; };
 		1AFF6BDF2DB984CF0093A3E2 /* JWTDecode in Frameworks */ = {isa = PBXBuildFile; productRef = 1AFF6BDE2DB984CF0093A3E2 /* JWTDecode */; };
 		1AFF6BE32DB9863A0093A3E2 /* LoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AFF6BE22DB9863A0093A3E2 /* LoginRequest.swift */; };
 		1AFF6BE52DB986580093A3E2 /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AFF6BE42DB986580093A3E2 /* LoginResponse.swift */; };
@@ -130,6 +133,9 @@
 		1A9CCE5E2DC4FD990050C283 /* DoctorPrescriptionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorPrescriptionService.swift; sourceTree = "<group>"; };
 		1A9CCE622DC4FDCB0050C283 /* DoctorPrescriptionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorPrescriptionsView.swift; sourceTree = "<group>"; };
 		1A9CCE6A2DC541030050C283 /* DoctorPatientService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorPatientService.swift; sourceTree = "<group>"; };
+		1A9CCE6C2DC547580050C283 /* DoctorTestResultsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorTestResultsView.swift; sourceTree = "<group>"; };
+		1A9CCE6E2DC5477C0050C283 /* DoctorTestResultService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorTestResultService.swift; sourceTree = "<group>"; };
+		1A9CCE702DC547E10050C283 /* TestResultRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestResultRequest.swift; sourceTree = "<group>"; };
 		1AFF6BE22DB9863A0093A3E2 /* LoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequest.swift; sourceTree = "<group>"; };
 		1AFF6BE42DB986580093A3E2 /* LoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
 		1AFF6BE62DB986650093A3E2 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
@@ -264,6 +270,7 @@
 				1A9CCE542DC4E8100050C283 /* DoctorMainView.swift */,
 				1A9CCE5A2DC4F4E90050C283 /* DoctorAppointmentsView.swift */,
 				1A9CCE622DC4FDCB0050C283 /* DoctorPrescriptionsView.swift */,
+				1A9CCE6C2DC547580050C283 /* DoctorTestResultsView.swift */,
 			);
 			path = Doctor;
 			sourceTree = "<group>";
@@ -284,6 +291,7 @@
 			children = (
 				1A83F4D52DC024E000404187 /* DoctorReference.swift */,
 				1A9CCE5C2DC4F5760050C283 /* DoctorAppointment.swift */,
+				1A9CCE702DC547E10050C283 /* TestResultRequest.swift */,
 			);
 			path = Doctor;
 			sourceTree = "<group>";
@@ -334,6 +342,7 @@
 				1A9CCE5E2DC4FD990050C283 /* DoctorPrescriptionService.swift */,
 				1A9CCE582DC4F4A80050C283 /* DoctorService.swift */,
 				1A9CCE6A2DC541030050C283 /* DoctorPatientService.swift */,
+				1A9CCE6E2DC5477C0050C283 /* DoctorTestResultService.swift */,
 			);
 			path = Doctor;
 			sourceTree = "<group>";
@@ -463,9 +472,11 @@
 				1AFF6BED2DB988F80093A3E2 /* MainView.swift in Sources */,
 				1A9CCE6B2DC541030050C283 /* DoctorPatientService.swift in Sources */,
 				1A83F4CE2DC018ED00404187 /* AppointmentService.swift in Sources */,
+				1A9CCE6F2DC5477C0050C283 /* DoctorTestResultService.swift in Sources */,
 				1A83F4D42DC0245500404187 /* TokenUtil.swift in Sources */,
 				1A9CCE5D2DC4F5760050C283 /* DoctorAppointment.swift in Sources */,
 				1A83F4D62DC024E000404187 /* DoctorReference.swift in Sources */,
+				1A9CCE6D2DC547580050C283 /* DoctorTestResultsView.swift in Sources */,
 				1A9CCE592DC4F4A80050C283 /* DoctorService.swift in Sources */,
 				1AFF6BEB2DB9868A0093A3E2 /* LoginView.swift in Sources */,
 				1A5F41A62DB982B500C40B9E /* HastaRandevuApp.swift in Sources */,
@@ -476,6 +487,7 @@
 				1A4523CF2DC26490008FA4F8 /* PrescriptionService.swift in Sources */,
 				1A7A74692DBC3C2800338382 /* WelcomeView.swift in Sources */,
 				1A3EC2172DBCFA6D007A4D24 /* UserModel.swift in Sources */,
+				1A9CCE712DC547E10050C283 /* TestResultRequest.swift in Sources */,
 				1AFF6BE92DB986770093A3E2 /* LoginViewModel.swift in Sources */,
 				1A7A746D2DBC3CB600338382 /* RegisterResponse.swift in Sources */,
 				1A83F4CC2DC0140500404187 /* AppointmentCreateView.swift in Sources */,
