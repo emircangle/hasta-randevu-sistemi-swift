@@ -68,4 +68,18 @@ class AppointmentService {
                 }
             }
     }
+    func getAppointmentsByDoctorId(_ doctorId: Int, completion: @escaping (Result<[Appointments], Error>) -> Void) {
+        let url = "\(baseURL)/doctor/\(doctorId)"
+        AF.request(url, headers: headers)
+            .validate()
+            .responseDecodable(of: [Appointments].self) { response in
+                switch response.result {
+                case .success(let appointments):
+                    completion(.success(appointments))
+                case .failure(let error):
+                    completion(.failure(error))
+                }
+            }
+    }
+
 }

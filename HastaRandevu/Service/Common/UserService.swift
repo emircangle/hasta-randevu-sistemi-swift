@@ -60,4 +60,11 @@ class UserService {
     func fetchDoctors(completion: @escaping (Result<[User], Error>) -> Void) {
         fetch(endpoint: "/role/DOKTOR", completion: completion)
     }
+    func getCurrentUser(completion: @escaping (Result<User, Error>) -> Void) {
+           guard let email = TokenUtil.getEmailFromToken() else {
+               completion(.failure(NSError(domain: "", code: 401, userInfo: [NSLocalizedDescriptionKey: "Token'dan e-posta çözülemedi."])))
+               return
+           }
+           fetchUserByEmail(email: email, completion: completion)
+       }
 }

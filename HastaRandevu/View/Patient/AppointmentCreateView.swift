@@ -11,7 +11,7 @@ struct AppointmentCreateView: View {
     @State private var selectedTime: String = ""
     @State private var descriptionText = ""
 
-    @State private var clinics = ["Dahiliye", "Kardiyoloji", "Nöroloji", "Ortopedi", "Göz Hastalıkları", "Kadın Doğum", "Üroloji", "Cildiye"]
+    @State private var clinics = ["Dahiliye", "Kardiyoloji", "Nöroloji", "Ortopedi", "Göz Hastalıkları", "Kadın Doğum", "Üroloji", "Cildiye","Diş"]
     @State private var doctors: [User] = []
     @State private var groupedTimeSlots: [(hour: String, slots: [String])] = []
     @State private var pastTimes: [String] = []

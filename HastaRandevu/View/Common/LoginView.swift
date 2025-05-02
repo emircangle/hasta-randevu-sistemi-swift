@@ -1,15 +1,10 @@
-//
-//  LoginView.swift
-//  HastaRandevu
-//
-//  Created by emircan güleç on 23.04.2025.
-//
-
 import Foundation
 import SwiftUI
 
 struct LoginView: View {
     @StateObject private var viewModel = LoginViewModel()
+    @State private var userRole: String?
+    @State private var isLoggedIn = false
 
     var body: some View {
         VStack(spacing: 16) {
@@ -26,19 +21,30 @@ struct LoginView: View {
             }
 
             Button("Giriş Yap") {
-                viewModel.login()
+                viewModel.login { success in
+                    if success {
+                        self.userRole = TokenUtil.getRoleFromToken()
+                        self.isLoggedIn = true
+                    }
+                }
             }
             .padding()
             .background(Color.blue)
             .foregroundColor(.white)
             .cornerRadius(8)
-
         }
         .padding()
-        .fullScreenCover(isPresented: $viewModel.isLoggedIn) {
-            // Giriş başarılıysa ana ekran
-            MainView()
+        .fullScreenCover(isPresented: $isLoggedIn) {
+            destinationView()
+        }
+    }
+
+    @ViewBuilder
+    private func destinationView() -> some View {
+        if userRole == "DOKTOR" || userRole == "ROLE_DOKTOR" {
+            DoctorMainView()
+        } else {
+            MainView() // HASTA
         }
     }
 }
-
