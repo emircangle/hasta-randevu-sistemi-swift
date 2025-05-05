@@ -64,9 +64,9 @@ struct DoctorMainView: View {
                 NavigationLink("", destination: DoctorAppointmentsView(), isActive: $navigateToIncomingAppointments).hidden()
                 NavigationLink("", destination: DoctorPrescriptionsView(), isActive: $navigateToDoctorPrescriptions).hidden()
                 NavigationLink("", destination: DoctorTestResultsView(), isActive: $navigateToDoctorTestResults).hidden()
-                /*
                 NavigationLink("", destination: DoctorPatientHistoriesView(), isActive: $navigateToDoctorPatientHistories).hidden()
                 NavigationLink("", destination: DoctorPatientReportsView(), isActive: $navigateToDoctorPatientReports).hidden()
+                /*
                 NavigationLink("", destination: MyPatientsView(), isActive: $navigateToMyPatients).hidden()
                 */
             }

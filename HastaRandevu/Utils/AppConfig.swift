@@ -1,5 +1,5 @@
 import Foundation
 
 enum AppConfig {
-    static let baseUrl = "http://192.168.1.103:8080"
+    static let baseUrl = "http://10.22.92.173:8080"
 }
