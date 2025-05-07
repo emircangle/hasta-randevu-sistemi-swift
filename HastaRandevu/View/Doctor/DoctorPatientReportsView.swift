@@ -34,10 +34,13 @@ struct DoctorPatientReportsView: View {
                     }.disabled(patientMode == "all")
                 }
 
-                // Hasta seçimi
                 Picker("Hasta Seçin", selection: Binding(
                     get: { selectedPatientId ?? -1 },
-                    set: { selectedPatientId = $0 == -1 ? nil : $0 })
+                    set: {
+                        selectedPatientId = $0 == -1 ? nil : $0
+                        mode = ""  // 
+                        reports = []
+                    })
                 ) {
                     Text("-- Hasta Seçin --").tag(-1)
                     ForEach(patients, id: \.id) { p in
@@ -45,6 +48,7 @@ struct DoctorPatientReportsView: View {
                     }
                 }
                 .pickerStyle(.menu)
+
 
                 if let _ = selectedPatientId {
                     if mode.isEmpty {

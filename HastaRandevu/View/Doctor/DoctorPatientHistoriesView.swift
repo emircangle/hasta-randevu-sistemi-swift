@@ -40,7 +40,11 @@ struct DoctorPatientHistoriesView: View {
                 // Hasta Seçimi
                 Picker("Hasta Seçin", selection: Binding(
                     get: { selectedPatientId ?? -1 },
-                    set: { selectedPatientId = $0 == -1 ? nil : $0 })
+                    set: {
+                        selectedPatientId = $0 == -1 ? nil : $0
+                        mode = ""                         // Butonlar tekrar görünsün
+                        patientHistories = []            // Önceki hasta geçmişi temizlensin
+                    })
                 ) {
                     Text("-- Hasta Seçin --").tag(-1)
                     ForEach(patients, id: \.id) { patient in
@@ -48,6 +52,8 @@ struct DoctorPatientHistoriesView: View {
                     }
                 }
                 .pickerStyle(.menu)
+
+
 
                 // Hasta Seçildiyse
                 if let _ = selectedPatientId {
