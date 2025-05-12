@@ -1,6 +1,6 @@
 import Foundation
 
-struct DoctorPatientStats: Identifiable, Decodable {
+struct DoctorPatientStats: Identifiable {
     let id: Int
     let name: String
     let surname: String
@@ -9,9 +9,9 @@ struct DoctorPatientStats: Identifiable, Decodable {
     let birthDate: String?
     let bloodType: String?
 
-    let appointmentCount: Int
-    let prescriptionCount: Int
-    let testResultCount: Int
-    let historyCount: Int
-    let reportCount: Int
+    var appointmentCount: Int = 0
+    var prescriptionCount: Int = 0
+    var testResultCount: Int = 0
+    var historyCount: Int = 0
+    var reportCount: Int = 0
 }

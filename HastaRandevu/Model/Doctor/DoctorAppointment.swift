@@ -12,6 +12,7 @@ struct DoctorAppointment: Identifiable, Decodable {
 }
 
 struct PatientSummary: Decodable {
+    let id: Int
     let name: String
     let surname: String
 }

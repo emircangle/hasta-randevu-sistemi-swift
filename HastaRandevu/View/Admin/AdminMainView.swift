@@ -1,13 +1,16 @@
 import SwiftUI
 
-struct DoctorMainView: View {
+struct AdminMainView: View {
     @State private var user: User?
-    @State private var navigateToIncomingAppointments = false
-    @State private var navigateToDoctorPrescriptions = false
-    @State private var navigateToDoctorTestResults = false
-    @State private var navigateToDoctorPatientHistories = false
-    @State private var navigateToDoctorPatientReports = false
-    @State private var navigateToMyPatients = false
+
+    // Navigation state'leri
+    @State private var navigateToUsers = false
+    @State private var navigateToComplaints = false
+    @State private var navigateToAppointments = false
+    @State private var navigateToAnalytics = false
+    @State private var navigateToExport = false
+    @State private var navigateToLogs = false
+    @State private var navigateToAI = false
 
     var body: some View {
         NavigationStack {
@@ -15,7 +18,7 @@ struct DoctorMainView: View {
                 HStack {
                     VStack(alignment: .leading, spacing: 4) {
                         if let user = user {
-                            Text("👨‍⚕️ Dr. \(user.name) \(user.surname)")
+                            Text("🛠️ Admin: \(user.name) \(user.surname)")
                                 .font(.title)
                                 .bold()
                             Text(user.email)
@@ -29,23 +32,26 @@ struct DoctorMainView: View {
                     Spacer()
 
                     Menu {
-                        Button("📅 Gelen Randevular") {
-                            navigateToIncomingAppointments = true
+                        Button("👥 Kullanıcıları Yönet") {
+                            navigateToUsers = true
                         }
-                        Button("🧾 Reçeteler") {
-                            navigateToDoctorPrescriptions = true
+                        Button("📢 Şikayetleri Görüntüle") {
+                            navigateToComplaints = true
                         }
-                        Button("🧪 Test Sonuçları") {
-                            navigateToDoctorTestResults = true
+                        Button("📅 Randevuları Görüntüle") {
+                            navigateToAppointments = true
                         }
-                        Button("📚 Hasta Geçmişleri") {
-                            navigateToDoctorPatientHistories = true
+                        Button("📊 İstatistik ve Analiz") {
+                            navigateToAnalytics = true
                         }
-                        Button("📄 Hasta Raporları") {
-                            navigateToDoctorPatientReports = true
+                        Button("📤 Verileri Dışa Aktar") {
+                            navigateToExport = true
                         }
-                        Button("🔍 Hastalarım") {
-                            navigateToMyPatients = true
+                        Button("📜 Erişim Kayıtları") {
+                            navigateToLogs = true
+                        }
+                        Button("🤖 AI Klinik Önerileri") {
+                            navigateToAI = true
                         }
 
                         Divider()
@@ -60,14 +66,16 @@ struct DoctorMainView: View {
 
                 Spacer()
 
-                // Navigation yönlendirmeleri
-                NavigationLink("", destination: DoctorAppointmentsView(), isActive: $navigateToIncomingAppointments).hidden()
-                NavigationLink("", destination: DoctorPrescriptionsView(), isActive: $navigateToDoctorPrescriptions).hidden()
-                NavigationLink("", destination: DoctorTestResultsView(), isActive: $navigateToDoctorTestResults).hidden()
-                NavigationLink("", destination: DoctorPatientHistoriesView(), isActive: $navigateToDoctorPatientHistories).hidden()
-                NavigationLink("", destination: DoctorPatientReportsView(), isActive: $navigateToDoctorPatientReports).hidden()
-                NavigationLink("", destination: DoctorMyPatientsView(), isActive: $navigateToMyPatients).hidden()
-                
+                // Navigasyon bağlantıları
+                NavigationLink("", destination: AdminUserListView(), isActive: $navigateToUsers).hidden()
+                NavigationLink("", destination: AdminComplaintsView(), isActive: $navigateToComplaints).hidden()
+                NavigationLink("", destination: AdminAppointmentsView(), isActive: $navigateToAppointments).hidden()
+                /*
+                NavigationLink("", destination: AdminAnalyticsView(), isActive: $navigateToAnalytics).hidden()
+                NavigationLink("", destination: AdminExportView(), isActive: $navigateToExport).hidden()
+                NavigationLink("", destination: AdminLogsView(), isActive: $navigateToLogs).hidden()
+                NavigationLink("", destination: AdminAIChatView(), isActive: $navigateToAI).hidden()
+                 */
             }
             .navigationTitle("")
             .navigationBarHidden(true)
@@ -87,7 +95,7 @@ struct DoctorMainView: View {
                 case .success(let fetchedUser):
                     self.user = fetchedUser
                 case .failure(let error):
-                    print("❌ Kullanıcı bilgileri alınamadı: \(error.localizedDescription)")
+                    print("❌ Kullanıcı bilgisi alınamadı: \(error.localizedDescription)")
                 }
             }
         }

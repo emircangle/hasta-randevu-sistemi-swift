@@ -10,5 +10,7 @@ struct RegisterRequest: Codable {
     let birthDate: String
     let bloodType: String?
     let chronicDiseases: String
+    let role: String?                 // 🔥 Optional olmalı
+    let specialization: String?      
 }
 

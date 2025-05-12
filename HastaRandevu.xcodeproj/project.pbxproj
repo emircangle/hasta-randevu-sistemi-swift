@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A0F52002DD2138E00D20638 /* UserDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0F51FF2DD2138E00D20638 /* UserDetailView.swift */; };
+		1A0F52022DD213A900D20638 /* UserEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0F52012DD213A900D20638 /* UserEditView.swift */; };
+		1A0F52042DD223E200D20638 /* AdminComplaintsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0F52032DD223E200D20638 /* AdminComplaintsView.swift */; };
+		1A0F52062DD25AD800D20638 /* AdminAppointmentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0F52052DD25AD800D20638 /* AdminAppointmentsView.swift */; };
 		1A2B39E22DC39A7F0018EBAA /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B39E12DC39A7F0018EBAA /* AppConfig.swift */; };
 		1A2B39E42DC3A3840018EBAA /* MyComplaintsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B39E32DC3A3840018EBAA /* MyComplaintsView.swift */; };
 		1A2B39E62DC3AAD90018EBAA /* AIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B39E52DC3AAD90018EBAA /* AIService.swift */; };
@@ -56,6 +60,11 @@
 		1A83F4D42DC0245500404187 /* TokenUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A83F4D32DC0245500404187 /* TokenUtil.swift */; };
 		1A83F4D62DC024E000404187 /* DoctorReference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A83F4D52DC024E000404187 /* DoctorReference.swift */; };
 		1A83F4D82DC024EC00404187 /* PatientReference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A83F4D72DC024EC00404187 /* PatientReference.swift */; };
+		1A8AEFAA2DD0C91E00C26E30 /* AdminMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A8AEFA92DD0C91E00C26E30 /* AdminMainView.swift */; };
+		1A8AEFAE2DD0D21300C26E30 /* AdminUserListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A8AEFAD2DD0D21300C26E30 /* AdminUserListView.swift */; };
+		1A8AEFB72DD158C500C26E30 /* NewDoctorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A8AEFB62DD158C500C26E30 /* NewDoctorView.swift */; };
+		1A8AEFB92DD158D100C26E30 /* NewPatientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A8AEFB82DD158D100C26E30 /* NewPatientView.swift */; };
+		1A8AEFBB2DD158E500C26E30 /* NewAdminView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A8AEFBA2DD158E500C26E30 /* NewAdminView.swift */; };
 		1A9CCE552DC4E8100050C283 /* DoctorMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9CCE542DC4E8100050C283 /* DoctorMainView.swift */; };
 		1A9CCE592DC4F4A80050C283 /* DoctorService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9CCE582DC4F4A80050C283 /* DoctorService.swift */; };
 		1A9CCE5B2DC4F4E90050C283 /* DoctorAppointmentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9CCE5A2DC4F4E90050C283 /* DoctorAppointmentsView.swift */; };
@@ -66,6 +75,7 @@
 		1A9CCE6D2DC547580050C283 /* DoctorTestResultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9CCE6C2DC547580050C283 /* DoctorTestResultsView.swift */; };
 		1A9CCE6F2DC5477C0050C283 /* DoctorTestResultService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9CCE6E2DC5477C0050C283 /* DoctorTestResultService.swift */; };
 		1A9CCE712DC547E10050C283 /* TestResultRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9CCE702DC547E10050C283 /* TestResultRequest.swift */; };
+		1AE13C482DCE2872002098E1 /* DoctorMyPatientsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE13C472DCE2872002098E1 /* DoctorMyPatientsView.swift */; };
 		1AFC344E2DCC14D6006409C2 /* DoctorPatientStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AFC344D2DCC14D6006409C2 /* DoctorPatientStats.swift */; };
 		1AFF6BDF2DB984CF0093A3E2 /* JWTDecode in Frameworks */ = {isa = PBXBuildFile; productRef = 1AFF6BDE2DB984CF0093A3E2 /* JWTDecode */; };
 		1AFF6BE32DB9863A0093A3E2 /* LoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AFF6BE22DB9863A0093A3E2 /* LoginRequest.swift */; };
@@ -90,6 +100,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1A0F51FF2DD2138E00D20638 /* UserDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailView.swift; sourceTree = "<group>"; };
+		1A0F52012DD213A900D20638 /* UserEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserEditView.swift; sourceTree = "<group>"; };
+		1A0F52032DD223E200D20638 /* AdminComplaintsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminComplaintsView.swift; sourceTree = "<group>"; };
+		1A0F52052DD25AD800D20638 /* AdminAppointmentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminAppointmentsView.swift; sourceTree = "<group>"; };
 		1A2B39E12DC39A7F0018EBAA /* AppConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
 		1A2B39E32DC3A3840018EBAA /* MyComplaintsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyComplaintsView.swift; sourceTree = "<group>"; };
 		1A2B39E52DC3AAD90018EBAA /* AIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIService.swift; sourceTree = "<group>"; };
@@ -139,6 +153,11 @@
 		1A83F4D32DC0245500404187 /* TokenUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenUtil.swift; sourceTree = "<group>"; };
 		1A83F4D52DC024E000404187 /* DoctorReference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorReference.swift; sourceTree = "<group>"; };
 		1A83F4D72DC024EC00404187 /* PatientReference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientReference.swift; sourceTree = "<group>"; };
+		1A8AEFA92DD0C91E00C26E30 /* AdminMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminMainView.swift; sourceTree = "<group>"; };
+		1A8AEFAD2DD0D21300C26E30 /* AdminUserListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminUserListView.swift; sourceTree = "<group>"; };
+		1A8AEFB62DD158C500C26E30 /* NewDoctorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewDoctorView.swift; sourceTree = "<group>"; };
+		1A8AEFB82DD158D100C26E30 /* NewPatientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPatientView.swift; sourceTree = "<group>"; };
+		1A8AEFBA2DD158E500C26E30 /* NewAdminView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewAdminView.swift; sourceTree = "<group>"; };
 		1A9CCE542DC4E8100050C283 /* DoctorMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorMainView.swift; sourceTree = "<group>"; };
 		1A9CCE582DC4F4A80050C283 /* DoctorService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorService.swift; sourceTree = "<group>"; };
 		1A9CCE5A2DC4F4E90050C283 /* DoctorAppointmentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorAppointmentsView.swift; sourceTree = "<group>"; };
@@ -149,6 +168,7 @@
 		1A9CCE6C2DC547580050C283 /* DoctorTestResultsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorTestResultsView.swift; sourceTree = "<group>"; };
 		1A9CCE6E2DC5477C0050C283 /* DoctorTestResultService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorTestResultService.swift; sourceTree = "<group>"; };
 		1A9CCE702DC547E10050C283 /* TestResultRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestResultRequest.swift; sourceTree = "<group>"; };
+		1AE13C472DCE2872002098E1 /* DoctorMyPatientsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorMyPatientsView.swift; sourceTree = "<group>"; };
 		1AFC344D2DCC14D6006409C2 /* DoctorPatientStats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorPatientStats.swift; sourceTree = "<group>"; };
 		1AFF6BE22DB9863A0093A3E2 /* LoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequest.swift; sourceTree = "<group>"; };
 		1AFF6BE42DB986580093A3E2 /* LoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
@@ -237,8 +257,8 @@
 		1A5F41BA2DB9831900C40B9E /* View */ = {
 			isa = PBXGroup;
 			children = (
+				1A8AEFA82DD0C90D00C26E30 /* Admin */,
 				1A9CCE532DC4E5D30050C283 /* Doctor */,
-				1A9CCE522DC4E5760050C283 /* Patient */,
 				1A9CCE512DC4E5220050C283 /* Common */,
 			);
 			path = View;
@@ -249,6 +269,23 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1A8AEFA82DD0C90D00C26E30 /* Admin */ = {
+			isa = PBXGroup;
+			children = (
+				1A8AEFA92DD0C91E00C26E30 /* AdminMainView.swift */,
+				1A8AEFAD2DD0D21300C26E30 /* AdminUserListView.swift */,
+				1A8AEFB62DD158C500C26E30 /* NewDoctorView.swift */,
+				1A8AEFB82DD158D100C26E30 /* NewPatientView.swift */,
+				1A8AEFBA2DD158E500C26E30 /* NewAdminView.swift */,
+				1A0F51FF2DD2138E00D20638 /* UserDetailView.swift */,
+				1A9CCE6A2DC541030050C283 /* DoctorPatientService.swift */,
+				1A0F52032DD223E200D20638 /* AdminComplaintsView.swift */,
+				1A0F52052DD25AD800D20638 /* AdminAppointmentsView.swift */,
+				1A9CCE522DC4E5760050C283 /* Patient */,
+			);
+			path = Admin;
 			sourceTree = "<group>";
 		};
 		1A9CCE512DC4E5220050C283 /* Common */ = {
@@ -287,6 +324,7 @@
 				1A9CCE6C2DC547580050C283 /* DoctorTestResultsView.swift */,
 				1A4391E82DC6C64C005F4097 /* DoctorPatientHistoriesView.swift */,
 				1A7A38CB2DC9155C0018C6D8 /* DoctorPatientReportsView.swift */,
+				1AE13C472DCE2872002098E1 /* DoctorMyPatientsView.swift */,
 			);
 			path = Doctor;
 			sourceTree = "<group>";
@@ -360,7 +398,7 @@
 			children = (
 				1A9CCE5E2DC4FD990050C283 /* DoctorPrescriptionService.swift */,
 				1A9CCE582DC4F4A80050C283 /* DoctorService.swift */,
-				1A9CCE6A2DC541030050C283 /* DoctorPatientService.swift */,
+				1A0F52012DD213A900D20638 /* UserEditView.swift */,
 				1A9CCE6E2DC5477C0050C283 /* DoctorTestResultService.swift */,
 				1A4391E62DC6C5D7005F4097 /* DoctorPatientHistoryService.swift */,
 				1A7A38CD2DC915BB0018C6D8 /* DoctorPatientReportService.swift */,
@@ -473,8 +511,10 @@
 				1A4523EB2DC2ADDD008FA4F8 /* ComplaintService.swift in Sources */,
 				1A2B39E22DC39A7F0018EBAA /* AppConfig.swift in Sources */,
 				1A4523D32DC26625008FA4F8 /* PrescriptionRequest.swift in Sources */,
+				1A8AEFAE2DD0D21300C26E30 /* AdminUserListView.swift in Sources */,
 				1A4523CB2DC257B6008FA4F8 /* MyAppointmentsView.swift in Sources */,
 				1A4523DB2DC2A8E2008FA4F8 /* PatientReport.swift in Sources */,
+				1AE13C482DCE2872002098E1 /* DoctorMyPatientsView.swift in Sources */,
 				1A4523D72DC2A77F008FA4F8 /* TestResultService.swift in Sources */,
 				1A9CCE5B2DC4F4E90050C283 /* DoctorAppointmentsView.swift in Sources */,
 				1A4523D92DC2A79C008FA4F8 /* MyTestResultsView.swift in Sources */,
@@ -482,7 +522,10 @@
 				1A4523D12DC264FB008FA4F8 /* Prescription.swift in Sources */,
 				1A4523E52DC2AC4F008FA4F8 /* MyHealthHistoryView.swift in Sources */,
 				1A5F41A82DB982B500C40B9E /* ContentView.swift in Sources */,
+				1A0F52022DD213A900D20638 /* UserEditView.swift in Sources */,
+				1A0F52002DD2138E00D20638 /* UserDetailView.swift in Sources */,
 				1A7A746B2DBC3CA900338382 /* RegisterRequest.swift in Sources */,
+				1A8AEFBB2DD158E500C26E30 /* NewAdminView.swift in Sources */,
 				1A7A746F2DBC3D1400338382 /* RegisterView.swift in Sources */,
 				1AFF6BE52DB986580093A3E2 /* LoginResponse.swift in Sources */,
 				1A7A38D02DC9164F0018C6D8 /* PatientReportRequest.swift in Sources */,
@@ -502,6 +545,8 @@
 				1A9CCE6D2DC547580050C283 /* DoctorTestResultsView.swift in Sources */,
 				1A9CCE592DC4F4A80050C283 /* DoctorService.swift in Sources */,
 				1AFF6BEB2DB9868A0093A3E2 /* LoginView.swift in Sources */,
+				1A8AEFB72DD158C500C26E30 /* NewDoctorView.swift in Sources */,
+				1A0F52042DD223E200D20638 /* AdminComplaintsView.swift in Sources */,
 				1A5F41A62DB982B500C40B9E /* HastaRandevuApp.swift in Sources */,
 				1A9CCE5F2DC4FD990050C283 /* DoctorPrescriptionService.swift in Sources */,
 				1A4391E92DC6C64C005F4097 /* DoctorPatientHistoriesView.swift in Sources */,
@@ -516,16 +561,19 @@
 				1AFF6BE92DB986770093A3E2 /* LoginViewModel.swift in Sources */,
 				1A7A38CE2DC915BB0018C6D8 /* DoctorPatientReportService.swift in Sources */,
 				1A7A746D2DBC3CB600338382 /* RegisterResponse.swift in Sources */,
+				1A8AEFB92DD158D100C26E30 /* NewPatientView.swift in Sources */,
 				1A83F4CC2DC0140500404187 /* AppointmentCreateView.swift in Sources */,
 				1A4391E72DC6C5D7005F4097 /* DoctorPatientHistoryService.swift in Sources */,
 				1A4523DD2DC2A8FB008FA4F8 /* PatientReportService.swift in Sources */,
 				1A2B39E82DC3AB2F0018EBAA /* AIChatView.swift in Sources */,
+				1A0F52062DD25AD800D20638 /* AdminAppointmentsView.swift in Sources */,
 				1AFF6BE32DB9863A0093A3E2 /* LoginRequest.swift in Sources */,
 				1A83F4D82DC024EC00404187 /* PatientReference.swift in Sources */,
 				1A5F41B22DB982B700C40B9E /* HastaRandevu.xcdatamodeld in Sources */,
 				1A4523ED2DC2ADEE008FA4F8 /* CreateComplaintView.swift in Sources */,
 				1A4523E32DC2AC1C008FA4F8 /* PatientHistoryService.swift in Sources */,
 				1AFC344E2DCC14D6006409C2 /* DoctorPatientStats.swift in Sources */,
+				1A8AEFAA2DD0C91E00C26E30 /* AdminMainView.swift in Sources */,
 				1A4523E12DC2AC06008FA4F8 /* PatientHistory.swift in Sources */,
 				1AFF6BE72DB986650093A3E2 /* AuthService.swift in Sources */,
 				1A9CCE552DC4E8100050C283 /* DoctorMainView.swift in Sources */,

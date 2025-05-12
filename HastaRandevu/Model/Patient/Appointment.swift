@@ -7,4 +7,7 @@ struct Appointments: Identifiable, Decodable {
     var clinic: String
     var status: String
     var description: String?
+    
+    var doctor: User?       // 👈 Bu alan eksikti
+    var patient: User?  
 }

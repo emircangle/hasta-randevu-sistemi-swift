@@ -37,4 +37,16 @@ class DoctorPatientHistoryService {
                 }
             }
     }
+    func getHistoriesByDoctorId(_ doctorId: Int, completion: @escaping (Result<[DoctorPatientHistory], Error>) -> Void) {
+        let url = "\(baseURL)/doctor/\(doctorId)"
+        AF.request(url, headers: headers)
+            .validate()
+            .responseDecodable(of: [DoctorPatientHistory].self) { response in
+                switch response.result {
+                case .success(let data): completion(.success(data))
+                case .failure(let error): completion(.failure(error))
+                }
+            }
+    }
+
 }

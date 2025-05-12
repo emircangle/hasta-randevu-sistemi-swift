@@ -14,6 +14,66 @@ class AppointmentService {
         return nil
     }
 
+    // ✅ Tüm randevuları getir (Admin)
+    func getAllAppointments(completion: @escaping (Result<[Appointments], Error>) -> Void) {
+        AF.request(baseURL, headers: headers)
+            .validate()
+            .responseDecodable(of: [Appointments].self) { response in
+                completion(response.result.mapError { $0 as Error })
+            }
+    }
+
+    // ✅ Tarih periyoduna göre filtrele (day, week, month, year)
+    func getAppointmentsByPeriod(_ period: String, completion: @escaping (Result<[Appointments], Error>) -> Void) {
+        let url = "\(baseURL)/filter?period=\(period)"
+        AF.request(url, headers: headers)
+            .validate()
+            .responseDecodable(of: [Appointments].self) { response in
+                completion(response.result.mapError { $0 as Error })
+            }
+    }
+
+    // ✅ Anahtar kelimeyle ara
+    func searchAppointmentsByKeyword(_ keyword: String, completion: @escaping (Result<[Appointments], Error>) -> Void) {
+        let url = "\(baseURL)/search?keyword=\(keyword)"
+        AF.request(url, headers: headers)
+            .validate()
+            .responseDecodable(of: [Appointments].self) { response in
+                completion(response.result.mapError { $0 as Error })
+            }
+    }
+
+    // ✅ Randevu durumu güncelle
+    func updateAppointmentStatus(id: Int, status: String, completion: @escaping (Result<Void, Error>) -> Void) {
+        let url = "\(baseURL)/\(id)/status?status=\(status)"
+        AF.request(url, method: .put, headers: headers)
+            .validate()
+            .response { response in
+                switch response.result {
+                case .success:
+                    completion(.success(()))
+                case .failure(let error):
+                    completion(.failure(error))
+                }
+            }
+    }
+
+    // ✅ Randevu sil
+    func deleteAppointment(_ id: Int, completion: @escaping (Result<Void, Error>) -> Void) {
+        let url = "\(baseURL)/\(id)"
+        AF.request(url, method: .delete, headers: headers)
+            .validate()
+            .response { response in
+                switch response.result {
+                case .success:
+                    completion(.success(()))
+                case .failure(let error):
+                    completion(.failure(error))
+                }
+            }
+    }
+
+    // Diğer mevcut fonksiyonlar (korundu)
     func createAppointment(_ appointment: AppointmentRequest, completion: @escaping (Result<Appointments, Error>) -> Void) {
         AF.request(baseURL, method: .post, parameters: appointment, encoder: JSONParameterEncoder.default, headers: headers)
             .validate()
@@ -32,12 +92,7 @@ class AppointmentService {
         AF.request(url, headers: headers)
             .validate()
             .responseDecodable(of: [Appointments].self) { response in
-                switch response.result {
-                case .success(let appointments):
-                    completion(.success(appointments))
-                case .failure(let error):
-                    completion(.failure(error))
-                }
+                completion(response.result.mapError { $0 as Error })
             }
     }
 
@@ -46,12 +101,7 @@ class AppointmentService {
         AF.request(url, headers: headers)
             .validate()
             .responseDecodable(of: [Appointments].self) { response in
-                switch response.result {
-                case .success(let appointments):
-                    completion(.success(appointments))
-                case .failure(let error):
-                    completion(.failure(error))
-                }
+                completion(response.result.mapError { $0 as Error })
             }
     }
 
@@ -68,18 +118,13 @@ class AppointmentService {
                 }
             }
     }
+
     func getAppointmentsByDoctorId(_ doctorId: Int, completion: @escaping (Result<[Appointments], Error>) -> Void) {
         let url = "\(baseURL)/doctor/\(doctorId)"
         AF.request(url, headers: headers)
             .validate()
             .responseDecodable(of: [Appointments].self) { response in
-                switch response.result {
-                case .success(let appointments):
-                    completion(.success(appointments))
-                case .failure(let error):
-                    completion(.failure(error))
-                }
+                completion(response.result.mapError { $0 as Error })
             }
     }
-
 }

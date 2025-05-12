@@ -41,10 +41,14 @@ struct LoginView: View {
 
     @ViewBuilder
     private func destinationView() -> some View {
-        if userRole == "DOKTOR" || userRole == "ROLE_DOKTOR" {
+        if userRole == "ADMIN" || userRole == "ROLE_ADMIN" {
+            AdminMainView()
+        } else if userRole == "DOKTOR" || userRole == "ROLE_DOKTOR" {
             DoctorMainView()
         } else {
             MainView() // HASTA
         }
     }
+
+    
 }
