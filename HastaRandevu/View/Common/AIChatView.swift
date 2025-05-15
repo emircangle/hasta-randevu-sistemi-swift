@@ -61,10 +61,11 @@ struct AIChatView: View {
             }
 
             NavigationLink(
-                destination: AppointmentCreateView(selectedClinic: suggestedClinic ?? ""),
+                destination: AppointmentCreateView(),
                 isActive: $navigateToAppointment,
                 label: { EmptyView() }
             )
+
             .onChange(of: navigateToAppointment) { newValue in
                 if newValue == true {
                     // yönlendirme sonrası resetle

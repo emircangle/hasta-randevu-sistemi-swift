@@ -1,7 +1,7 @@
 import Foundation
 
 struct AppointmentRequest: Codable {
-    var clinic: String
+    var clinicId: Int
     var date: String
     var time: String
     var description: String?

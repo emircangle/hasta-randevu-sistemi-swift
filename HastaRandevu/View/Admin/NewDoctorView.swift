@@ -12,6 +12,8 @@ struct NewDoctorView: View {
     @State private var gender = "ERKEK"
     @State private var birthDate = Date()
     @State private var specialization = ""
+    @State private var clinics: [Clinic] = []
+    @State private var selectedClinicId: Int? = nil
 
     @State private var showSuccess = false
     @State private var errorMessage: String?
@@ -35,6 +37,13 @@ struct NewDoctorView: View {
                 .pickerStyle(SegmentedPickerStyle())
 
                 TextField("Uzmanlık", text: $specialization)
+
+                Picker("Klinik Seçin", selection: $selectedClinicId) {
+                    Text("-- Seçin --").tag(nil as Int?)
+                    ForEach(clinics, id: \.id) { clinic in
+                        Text(clinic.name).tag(clinic.id as Int?)
+                    }
+                }
             }
 
             if let error = errorMessage {
@@ -44,6 +53,7 @@ struct NewDoctorView: View {
             Button("✅ Doktoru Oluştur") {
                 registerDoctor()
             }
+            .disabled(selectedClinicId == nil || specialization.isEmpty || name.isEmpty || surname.isEmpty || email.isEmpty || password.isEmpty || phone.isEmpty)
         }
         .navigationTitle("Yeni Doktor Ekle")
         .alert(isPresented: $showSuccess) {
@@ -55,6 +65,20 @@ struct NewDoctorView: View {
                     dismiss()
                 }
             )
+        }
+        .onAppear(perform: fetchClinics)
+    }
+
+    private func fetchClinics() {
+        ClinicService.shared.getAllClinics { result in
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let data):
+                    clinics = data.filter { $0.isActive }
+                case .failure(let err):
+                    errorMessage = "Klinikler alınamadı: \(err.localizedDescription)"
+                }
+            }
         }
     }
 
@@ -73,13 +97,14 @@ struct NewDoctorView: View {
             bloodType: nil,
             chronicDiseases: "",
             role: "DOKTOR",
-            specialization: specialization
+            specialization: specialization,
+            clinic: selectedClinicId.map { ClinicReference(id: $0) }
         )
-        // DEBUG: Gönderilen JSON
-            if let jsonData = try? JSONEncoder().encode(request),
-               let jsonString = String(data: jsonData, encoding: .utf8) {
-                print("📦 [NewDoctorView] Gönderilen JSON:\n\(jsonString)")
-            }
+
+        if let jsonData = try? JSONEncoder().encode(request),
+           let jsonString = String(data: jsonData, encoding: .utf8) {
+            print("📦 [NewDoctorView] Gönderilen JSON:\n\(jsonString)")
+        }
 
         UserService.shared.createUser(request) { result in
             DispatchQueue.main.async {
@@ -91,6 +116,5 @@ struct NewDoctorView: View {
                 }
             }
         }
-
     }
 }

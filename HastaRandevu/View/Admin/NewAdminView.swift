@@ -70,7 +70,8 @@ struct NewAdminView: View {
             bloodType: nil,
             chronicDiseases: "",
             role: "ADMIN",
-            specialization: nil
+            specialization: nil,
+            clinic: nil
         )
 
         UserService.shared.createUser(request) { result in

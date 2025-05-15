@@ -6,6 +6,9 @@ struct UserEditView: View {
     @State var user: User
     let onSave: () -> Void
 
+    @State private var clinics: [Clinic] = []
+    @State private var selectedClinicId: Int?
+
     var body: some View {
         Form {
             Section(header: Text("Genel Bilgiler")) {
@@ -31,6 +34,16 @@ struct UserEditView: View {
                         get: { user.specialization ?? "" },
                         set: { user.specialization = $0 }
                     ))
+
+                    Picker("Klinik", selection: Binding(
+                        get: { selectedClinicId ?? user.clinic?.id },
+                        set: { selectedClinicId = $0 }
+                    )) {
+                        Text("-- Seçiniz --").tag(nil as Int?)
+                        ForEach(clinics, id: \.id) { clinic in
+                            Text(clinic.name).tag(clinic.id as Int?)
+                        }
+                    }
                 }
             }
 
@@ -44,6 +57,7 @@ struct UserEditView: View {
                             Text($0)
                         }
                     }
+
                     TextField("Kronik Rahatsızlık", text: Binding(
                         get: { user.chronicDiseases ?? "" },
                         set: { user.chronicDiseases = $0 }
@@ -53,6 +67,10 @@ struct UserEditView: View {
 
             Section {
                 Button("💾 Kaydet") {
+                    if user.role == "DOKTOR", let selectedId = selectedClinicId {
+                        user.clinic = clinics.first(where: { $0.id == selectedId })
+                    }
+
                     UserService.shared.updateUser(user) { result in
                         switch result {
                         case .success:
@@ -66,5 +84,20 @@ struct UserEditView: View {
             }
         }
         .navigationTitle("Kullanıcı Güncelle")
+        .onAppear(perform: loadClinics)
+    }
+
+    private func loadClinics() {
+        ClinicService.shared.getAllClinics { result in
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let list):
+                    clinics = list.filter { $0.isActive }
+                    selectedClinicId = user.clinic?.id
+                case .failure(let error):
+                    print("Klinik verileri alınamadı: \(error.localizedDescription)")
+                }
+            }
+        }
     }
 }

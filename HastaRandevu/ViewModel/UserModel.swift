@@ -19,4 +19,5 @@ struct User: Codable, Identifiable {
     var chronicDiseases: String?
     var specialization: String?
     var role: String
+    var clinic: Clinic?
 }

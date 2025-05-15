@@ -1,17 +1,15 @@
 import SwiftUI
 
 struct AppointmentCreateView: View {
-    var selectedClinic: String = ""
-
     @Environment(\.presentationMode) var presentationMode
 
-    @State private var selectedClinicState: String = ""
+    @State private var selectedClinic: Clinic?
+    @State private var clinics: [Clinic] = []
     @State private var selectedDoctorId: Int?
     @State private var selectedDate = Date()
     @State private var selectedTime: String = ""
     @State private var descriptionText = ""
 
-    @State private var clinics = ["Dahiliye", "Kardiyoloji", "Nöroloji", "Ortopedi", "Göz Hastalıkları", "Kadın Doğum", "Üroloji", "Cildiye","Diş"]
     @State private var doctors: [User] = []
     @State private var groupedTimeSlots: [(hour: String, slots: [String])] = []
     @State private var pastTimes: [String] = []
@@ -30,12 +28,14 @@ struct AppointmentCreateView: View {
                 .font(.largeTitle)
                 .bold()
 
-            Picker("Klinik Seçiniz", selection: $selectedClinicState) {
-                Text("-- Seçiniz --").tag("")
-                ForEach(clinics, id: \.self) { Text($0).tag($0) }
+            Picker("Klinik Seçiniz", selection: $selectedClinic) {
+                Text("-- Seçiniz --").tag(nil as Clinic?)
+                ForEach(clinics) { clinic in
+                    Text(clinic.name).tag(clinic as Clinic?)
+                }
             }
             .pickerStyle(MenuPickerStyle())
-            .onChange(of: selectedClinicState) { _ in
+            .onChange(of: selectedClinic) { _ in
                 selectedDoctorId = nil
                 selectedTime = ""
                 fetchDoctors()
@@ -44,7 +44,9 @@ struct AppointmentCreateView: View {
 
             Picker("Doktor Seçiniz", selection: $selectedDoctorId) {
                 Text("-- Seçiniz --").tag(nil as Int?)
-                ForEach(doctors, id: \.id) { Text("\($0.name) \($0.surname)").tag($0.id as Int?) }
+                ForEach(doctors, id: \.id) {
+                    Text("\($0.name) \($0.surname)").tag($0.id as Int?)
+                }
             }
             .pickerStyle(MenuPickerStyle())
             .onChange(of: selectedDoctorId) { _ in
@@ -63,8 +65,7 @@ struct AppointmentCreateView: View {
                 Text("Saat Seçiniz")
                 ScrollView(.vertical) {
                     ForEach(groupedTimeSlots, id: \.hour) { group in
-                        Text("⏰ \(group.hour)")
-                            .bold()
+                        Text("⏰ \(group.hour)").bold()
                         ScrollView(.horizontal) {
                             HStack {
                                 ForEach(group.slots, id: \.self) { slot in
@@ -102,12 +103,11 @@ struct AppointmentCreateView: View {
             }
 
             if let error = errorMessage {
-                Text(error).foregroundColor(.red)
+                Text("❌ \(error)").foregroundColor(.red)
             }
 
             if saveSuccess {
-                Text("✅ Randevu başarıyla oluşturuldu!")
-                    .foregroundColor(.green)
+                Text("✅ Randevu başarıyla oluşturuldu!").foregroundColor(.green)
             }
 
             Spacer()
@@ -115,10 +115,8 @@ struct AppointmentCreateView: View {
         .padding()
         .onAppear {
             fetchCurrentUser()
-            if clinics.contains(selectedClinic) {
-                selectedClinicState = selectedClinic
-                fetchDoctors()
-            }
+            fetchClinics()
+            _ = TokenUtil.getRoleFromToken()
         }
         .navigationTitle("Randevu Oluştur")
         .alert(isPresented: $showReplaceAlert) {
@@ -128,6 +126,21 @@ struct AppointmentCreateView: View {
                 primaryButton: .default(Text("Evet")) { saveAppointment() },
                 secondaryButton: .cancel()
             )
+        }
+    }
+
+    // MARK: - Yardımcı Fonksiyonlar
+
+    private func fetchClinics() {
+        ClinicService.shared.getAllClinics { result in
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let data):
+                    self.clinics = data.filter { $0.isActive }
+                case .failure(let error):
+                    self.errorMessage = "Klinikler alınamadı: \(error.localizedDescription)"
+                }
+            }
         }
     }
 
@@ -159,8 +172,8 @@ struct AppointmentCreateView: View {
     }
 
     private func fetchDoctors() {
-        guard !selectedClinicState.isEmpty else { return }
-        UserService.shared.fetchUsersBySpecialization(specialization: selectedClinicState) { result in
+        guard let clinicId = selectedClinic?.id else { return }
+        ClinicService.shared.getDoctorsByClinicId(clinicId: clinicId) { result in
             DispatchQueue.main.async {
                 if case let .success(data) = result {
                     doctors = data
@@ -192,7 +205,7 @@ struct AppointmentCreateView: View {
         groupedTimeSlots = []
         pastTimes = []
 
-        guard !Calendar.current.isDateInWeekend(selectedDate) else { return }
+        guard !calendar.isDateInWeekend(selectedDate) else { return }
 
         for hour in startHour..<endHour where hour != 12 {
             var slots: [String] = []
@@ -225,7 +238,7 @@ struct AppointmentCreateView: View {
         }
 
         if allAppointments.contains(where: {
-            $0.clinic == selectedClinicState && $0.status == "AKTIF"
+            $0.clinic.name == selectedClinic?.name && $0.status == "AKTIF"
         }) {
             showReplaceAlert = true
         } else {
@@ -234,14 +247,14 @@ struct AppointmentCreateView: View {
     }
 
     private func saveAppointment() {
-        guard let patientId, let doctorId = selectedDoctorId else { return }
+        guard let patientId, let doctorId = selectedDoctorId, let clinicId = selectedClinic?.id else { return }
 
         isSaving = true
 
         let selectedDoctor = doctors.first(where: { $0.id == doctorId })
 
         let request = AppointmentRequest(
-            clinic: selectedClinicState,
+            clinicId: clinicId,
             date: formatDate(selectedDate),
             time: selectedTime,
             description: descriptionText.isEmpty ? "Online randevu alındı." : descriptionText,
@@ -268,7 +281,7 @@ struct AppointmentCreateView: View {
     }
 
     private func resetForm() {
-        selectedClinicState = ""
+        selectedClinic = nil
         selectedDoctorId = nil
         selectedTime = ""
         descriptionText = ""

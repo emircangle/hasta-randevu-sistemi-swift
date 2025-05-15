@@ -26,10 +26,11 @@ class RegisterViewModel: ObservableObject {
             phoneNumber: phone,
             gender: gender.uppercased(), // enum uyumu için
             birthDate: formatter.string(from: birthDate),
-            bloodType: bloodGroup.uppercased(), // enum uyumu için
+            bloodType: bloodGroup.isEmpty ? nil : bloodGroup.uppercased(), // enum uyumu için
             chronicDiseases: chronicDiseases,
             role: nil,                    // hasta olduğu için otomatik atanacak
-            specialization: nil
+            specialization: nil,
+            clinic: nil
         )
 
         print("📤 Gönderilen kayıt isteği: \(request)")

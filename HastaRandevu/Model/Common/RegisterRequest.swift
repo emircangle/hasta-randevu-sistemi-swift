@@ -1,6 +1,6 @@
 import Foundation
 
-struct RegisterRequest: Codable {
+struct RegisterRequest: Encodable {
     let name: String
     let surname: String
     let email: String
@@ -11,6 +11,11 @@ struct RegisterRequest: Codable {
     let bloodType: String?
     let chronicDiseases: String
     let role: String?                 // 🔥 Optional olmalı
-    let specialization: String?      
+    let specialization: String?
+    let clinic: ClinicReference?
+}
+
+struct ClinicReference: Encodable {
+    let id: Int
 }
 

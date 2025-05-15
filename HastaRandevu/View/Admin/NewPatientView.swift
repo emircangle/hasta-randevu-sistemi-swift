@@ -80,7 +80,8 @@ struct NewPatientView: View {
             bloodType: bloodType,
             chronicDiseases: chronicDiseases,
             role: "HASTA",
-            specialization: nil
+            specialization: nil,
+            clinic: nil
         )
 
         UserService.shared.createUser(request) { result in

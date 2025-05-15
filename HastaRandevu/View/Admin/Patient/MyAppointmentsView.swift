@@ -38,7 +38,7 @@ struct MyAppointmentsView: View {
             List {
                 ForEach(filteredAppointments) { app in
                     VStack(alignment: .leading, spacing: 5) {
-                        Text("📍 Klinik: \(app.clinic)")
+                        Text("📍 Klinik: \(app.clinic.name)")
                         Text("📅 Tarih: \(app.date)")
                         Text("⏰ Saat: \(app.time.prefix(5))")
                         Text("📌 Durum: \(app.status)")

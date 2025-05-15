@@ -25,6 +25,7 @@ struct UserDetailView: View {
             if user.role == "DOKTOR" {
                 Section(header: Text("Doktor Bilgisi")) {
                     Text("🏥 Uzmanlık: \(user.specialization ?? "-")")
+                    Text("🏥 Klinik: \(user.clinic?.name ?? "Klinik atanmadı")")
                 }
             }
         }

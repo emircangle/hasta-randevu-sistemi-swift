@@ -70,8 +70,8 @@ struct AdminMainView: View {
                 NavigationLink("", destination: AdminUserListView(), isActive: $navigateToUsers).hidden()
                 NavigationLink("", destination: AdminComplaintsView(), isActive: $navigateToComplaints).hidden()
                 NavigationLink("", destination: AdminAppointmentsView(), isActive: $navigateToAppointments).hidden()
-                /*
                 NavigationLink("", destination: AdminAnalyticsView(), isActive: $navigateToAnalytics).hidden()
+                /*
                 NavigationLink("", destination: AdminExportView(), isActive: $navigateToExport).hidden()
                 NavigationLink("", destination: AdminLogsView(), isActive: $navigateToLogs).hidden()
                 NavigationLink("", destination: AdminAIChatView(), isActive: $navigateToAI).hidden()

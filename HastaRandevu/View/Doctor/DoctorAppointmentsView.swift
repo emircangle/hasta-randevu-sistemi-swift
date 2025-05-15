@@ -20,7 +20,7 @@ struct DoctorAppointmentsView: View {
                             Text("👤 Hasta: \(appointment.patient.name) \(appointment.patient.surname)")
                             Text("📅 Tarih: \(appointment.date)")
                             Text("⏰ Saat: \(appointment.time)")
-                            Text("🏥 Klinik: \(appointment.clinic)")
+                            Text("🏥 Klinik: \(appointment.clinic.name)")
                             Text("📝 Açıklama: \(appointment.description ?? "-")")
                             Text("📌 Durum: \(appointment.status)")
                         }
