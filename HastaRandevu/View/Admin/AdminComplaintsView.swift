@@ -40,6 +40,12 @@ struct AdminComplaintsView: View {
                         VStack(alignment: .leading, spacing: 4) {
                             Text("\(complaint.user.name ?? "") \(complaint.user.surname ?? "")").bold()
                             Text("İçerik: \(complaint.content ?? "")")
+                            if let clinicName = complaint.clinic?.name {
+                                Text("Klinik: \(clinicName)")
+                            } else {
+                                Text("Klinik: Belirtilmemiş")
+                            }
+
 
                             if editingComplaintId == complaint.id {
                                 Picker("Durum", selection: $updatedStatus) {

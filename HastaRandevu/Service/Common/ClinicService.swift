@@ -34,4 +34,5 @@ class ClinicService {
                     completion(response.result.mapError { $0 as Error })
                 }
         }
+    
 }

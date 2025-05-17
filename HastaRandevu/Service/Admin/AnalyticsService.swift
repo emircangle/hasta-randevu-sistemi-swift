@@ -77,4 +77,41 @@ class AnalyticsService {
                 completion(response.result.mapError { $0 as Error })
             }
     }
+    // 1. Kullanıcı rol dağılımı
+    func getUserCountByRole(completion: @escaping (Result<[UserRoleCount], Error>) -> Void) {
+        AF.request("\(baseURL)/users/roles", headers: headers)
+            .validate()
+            .responseDecodable(of: [UserRoleCount].self) { response in
+                completion(response.result.mapError { $0 as Error })
+            }
+    }
+
+    // 2. Cinsiyet dağılımı
+    func getUserCountByGender(completion: @escaping (Result<[GenderCount], Error>) -> Void) {
+        AF.request("\(baseURL)/users/genders", headers: headers)
+            .validate()
+            .responseDecodable(of: [GenderCount].self) { response in
+                completion(response.result.mapError { $0 as Error })
+            }
+    }
+
+    // 3. Kan grubu dağılımı
+    func getUserCountByBloodType(completion: @escaping (Result<[BloodTypeCount], Error>) -> Void) {
+        AF.request("\(baseURL)/users/blood-types", headers: headers)
+            .validate()
+            .responseDecodable(of: [BloodTypeCount].self) { response in
+                completion(response.result.mapError { $0 as Error })
+            }
+    }
+
+    // 4. Kliniklere göre doktor sayısı
+    func getDoctorCountByClinic(completion: @escaping (Result<[ClinicDoctorCount], Error>) -> Void) {
+        AF.request("\(baseURL)/clinics/doctor-count", headers: headers)
+            .validate()
+            .responseDecodable(of: [ClinicDoctorCount].self) { response in
+                completion(response.result.mapError { $0 as Error })
+            }
+    }
+
+    
 }

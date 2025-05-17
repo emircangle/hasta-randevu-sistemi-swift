@@ -1,44 +1,43 @@
 import SwiftUI
 
 struct AdminAnalyticsView: View {
-    enum AnalyticsTab: String, CaseIterable {
-        case clinic = "Klinik"
-        case date = "Tarih"
-        case status = "Durum"
-        case doctor = "Doktor"
+    var body: some View {
+        NavigationStack {
+            VStack(spacing: 20) {
+                Text("📊 İstatistik ve Analiz Paneli")
+                    .font(.title2)
+                    .bold()
+                    .padding(.top)
+
+              // 3 Buton
+                NavigationLink(destination: UserAnalyticsTabView()) {
+                    analyticsButtonLabel("👤 Kullanıcı Analizi")
+                }
+
+                NavigationLink(destination: AppointmentAnalyticsTabView()) {
+                    analyticsButtonLabel("📅 Randevu Analizi")
+                }
+
+                NavigationLink(destination: ComplaintAnalyticsTabView()) {
+                    analyticsButtonLabel("📝 Şikayet Analizi")
+                }
+
+
+                Spacer()
+            }
+            .padding()
+            .navigationTitle("Admin Paneli")
+        }
     }
 
-    @State private var selectedTab: AnalyticsTab = .clinic
-
-    var body: some View {
-        VStack {
-            Text("📊 İstatistik ve Analiz Paneli")
-                .font(.title2)
-                .bold()
-                .padding(.top)
-
-            // Sekmeler
-            Picker("Analiz Türü", selection: $selectedTab) {
-                ForEach(AnalyticsTab.allCases, id: \.self) {
-                    Text($0.rawValue)
-                }
-            }
-            .pickerStyle(SegmentedPickerStyle())
+    // Tekrarlı buton stilini fonksiyonla yönettik
+    private func analyticsButtonLabel(_ title: String) -> some View {
+        Text(title)
+            .frame(maxWidth: .infinity)
             .padding()
-
-            // İçerik
-            switch selectedTab {
-            case .clinic:
-                AppointmentClinicChart()
-            case .date:
-                AppointmentDateChart()
-            case .status:
-                AppointmentStatusChart()
-            case .doctor:
-                AppointmentDoctorChart()
-            }
-        }
-        .padding()
-        .navigationTitle("Admin Paneli")
+            .background(Color.blue.opacity(0.2))
+            .foregroundColor(.blue)
+            .cornerRadius(12)
+            .font(.headline)
     }
 }

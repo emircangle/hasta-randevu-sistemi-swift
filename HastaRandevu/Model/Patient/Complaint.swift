@@ -8,5 +8,6 @@ struct Complaint: Codable, Identifiable {
     let user: PatientReference   // 🔁 patient yerine user
     let adminNote: String?
     let status: String
+    let clinic: ClinicReference?
 }
 

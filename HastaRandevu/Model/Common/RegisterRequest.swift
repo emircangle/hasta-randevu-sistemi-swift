@@ -15,7 +15,13 @@ struct RegisterRequest: Encodable {
     let clinic: ClinicReference?
 }
 
-struct ClinicReference: Encodable {
+struct ClinicReference: Codable {
     let id: Int
-}
+    let name: String?
 
+    // ✅ Eski tek-parametreli kullanımlar için:
+    init(id: Int, name: String? = nil) {
+        self.id = id
+        self.name = name
+    }
+}

@@ -1,0 +1,39 @@
+import SwiftUI
+
+struct ComplaintAnalyticsTabView: View {
+    enum ComplaintTab: String, CaseIterable {
+        case status = "Durum"
+        case clinic = "Klinik"
+    }
+
+    @State private var selectedTab: ComplaintTab = .status
+
+    var body: some View {
+        VStack(spacing: 16) {
+            Text("📈 Şikayet Analizleri")
+                .font(.title2)
+                .bold()
+
+            Picker("Kategori", selection: $selectedTab) {
+                ForEach(ComplaintTab.allCases, id: \.self) { tab in
+                    Text(tab.rawValue)
+                }
+            }
+            .pickerStyle(SegmentedPickerStyle())
+            .padding(.horizontal)
+
+            Group {
+                switch selectedTab {
+                case .status:
+                    ComplaintStatusChart()
+                case .clinic:
+                    ComplaintClinicChart()
+                }
+            }
+
+            Spacer()
+        }
+        .padding()
+        .navigationTitle("Şikayet Analizi")
+    }
+}
