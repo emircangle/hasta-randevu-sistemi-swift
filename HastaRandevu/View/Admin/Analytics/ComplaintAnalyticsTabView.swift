@@ -4,6 +4,7 @@ struct ComplaintAnalyticsTabView: View {
     enum ComplaintTab: String, CaseIterable {
         case status = "Durum"
         case clinic = "Klinik"
+        case subject = "Konu"
     }
 
     @State private var selectedTab: ComplaintTab = .status
@@ -28,6 +29,8 @@ struct ComplaintAnalyticsTabView: View {
                     ComplaintStatusChart()
                 case .clinic:
                     ComplaintClinicChart()
+                case .subject:
+                    ComplaintSubjectChart()
                 }
             }
 
@@ -36,4 +39,5 @@ struct ComplaintAnalyticsTabView: View {
         .padding()
         .navigationTitle("Şikayet Analizi")
     }
+
 }

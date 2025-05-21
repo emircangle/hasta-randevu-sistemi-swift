@@ -109,4 +109,8 @@ class UserService {
                 completion(response.result.mapError { $0 as Error })
             }
     }
+    func getAllUsers(completion: @escaping (Result<[User], Error>) -> Void) {
+        fetch(endpoint: "", completion: completion)
+    }
+
 }

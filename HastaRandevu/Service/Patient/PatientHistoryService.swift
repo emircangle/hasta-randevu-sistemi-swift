@@ -49,4 +49,17 @@ class PatientHistoryService {
                 completion(response.result.mapError { $0 as Error })
             }
     }
+    func getAllHistories(completion: @escaping (Result<[PatientHistory], Error>) -> Void) {
+        AF.request(baseURL, headers: headers)
+            .validate()
+            .responseDecodable(of: [PatientHistory].self) { response in
+                switch response.result {
+                case .success(let histories):
+                    completion(.success(histories))
+                case .failure(let error):
+                    completion(.failure(error))
+                }
+            }
+    }
+
 }

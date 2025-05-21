@@ -7,4 +7,6 @@ struct PatientHistory: Identifiable, Decodable {
     let treatment: String
     let notes: String?
     let patient: PatientReference
+    let doctor: DoctorReference?
+
 }

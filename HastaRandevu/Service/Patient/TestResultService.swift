@@ -41,4 +41,17 @@ class TestResultService {
                 }
             }
     }
+    func getAllTestResults(completion: @escaping (Result<[TestResult], Error>) -> Void) {
+        AF.request(baseURL, headers: headers)
+            .validate()
+            .responseDecodable(of: [TestResult].self) { response in
+                switch response.result {
+                case .success(let results):
+                    completion(.success(results))
+                case .failure(let error):
+                    completion(.failure(error))
+                }
+            }
+    }
+
 }

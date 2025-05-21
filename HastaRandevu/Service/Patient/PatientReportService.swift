@@ -31,4 +31,17 @@ class PatientReportService {
                 completion(response.result.mapError { $0 as Error })
             }
     }
+    func getAllReports(completion: @escaping (Result<[PatientReport], Error>) -> Void) {
+        AF.request(baseURL, headers: headers)
+            .validate()
+            .responseDecodable(of: [PatientReport].self) { response in
+                switch response.result {
+                case .success(let reports):
+                    completion(.success(reports))
+                case .failure(let error):
+                    completion(.failure(error))
+                }
+            }
+    }
+
 }

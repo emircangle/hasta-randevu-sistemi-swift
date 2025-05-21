@@ -112,6 +112,14 @@ class AnalyticsService {
                 completion(response.result.mapError { $0 as Error })
             }
     }
+    func getComplaintCountBySubject(completion: @escaping (Result<[ComplaintSubjectCount], Error>) -> Void) {
+        AF.request("\(baseURL)/complaints/subject", headers: headers)
+            .validate()
+            .responseDecodable(of: [ComplaintSubjectCount].self) { response in
+                completion(response.result.mapError { $0 as Error })
+            }
+    }
+
 
     
 }

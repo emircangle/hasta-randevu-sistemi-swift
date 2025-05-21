@@ -138,4 +138,17 @@ class PrescriptionService {
                 }
             }
     }
+    func getAllPrescriptions(completion: @escaping (Result<[Prescription], Error>) -> Void) {
+        AF.request(baseURL, headers: headers)
+            .validate()
+            .responseDecodable(of: [Prescription].self) { response in
+                switch response.result {
+                case .success(let prescriptions):
+                    completion(.success(prescriptions))
+                case .failure(let error):
+                    completion(.failure(error))
+                }
+            }
+    }
+
 }

@@ -11,6 +11,9 @@ struct AdminMainView: View {
     @State private var navigateToExport = false
     @State private var navigateToLogs = false
     @State private var navigateToAI = false
+    @State private var navigateToClinics = false
+    
+
 
     var body: some View {
         NavigationStack {
@@ -53,6 +56,10 @@ struct AdminMainView: View {
                         Button("🤖 AI Klinik Önerileri") {
                             navigateToAI = true
                         }
+                        Button("🏥 Klinikleri Yönet") {
+                            navigateToClinics = true
+                        }
+
 
                         Divider()
                         Button("🚪 Çıkış Yap", role: .destructive, action: logout)
@@ -71,8 +78,9 @@ struct AdminMainView: View {
                 NavigationLink("", destination: AdminComplaintsView(), isActive: $navigateToComplaints).hidden()
                 NavigationLink("", destination: AdminAppointmentsView(), isActive: $navigateToAppointments).hidden()
                 NavigationLink("", destination: AdminAnalyticsView(), isActive: $navigateToAnalytics).hidden()
-                /*
+                NavigationLink("", destination: AdminClinicsView(), isActive: $navigateToClinics).hidden()
                 NavigationLink("", destination: AdminExportView(), isActive: $navigateToExport).hidden()
+                /*
                 NavigationLink("", destination: AdminLogsView(), isActive: $navigateToLogs).hidden()
                 NavigationLink("", destination: AdminAIChatView(), isActive: $navigateToAI).hidden()
                  */
